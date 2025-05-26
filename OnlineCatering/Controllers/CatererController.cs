@@ -218,6 +218,28 @@ namespace OnlineCatering.Controllers
 
         //Controller of Worker
 
+        public IActionResult AddWorkers()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddWorkers(Worker workers)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Workers.Add(workers);
+                db.SaveChanges();
+            }
+                return RedirectToAction("Workers");
+        }
+
+        public IActionResult Workers()
+        {
+            return View(db.Workers.ToList());
+        }
+
+
+
         //Controller of Worker
 
     }

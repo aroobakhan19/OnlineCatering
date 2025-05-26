@@ -261,3 +261,4 @@ D:\E-Project\Project\OnlineCatering\OnlineCatering\obj\Debug\net8.0\refint\Onlin
 D:\E-Project\Project\OnlineCatering\OnlineCatering\obj\Debug\net8.0\OnlineCatering.pdb
 D:\E-Project\Project\OnlineCatering\OnlineCatering\obj\Debug\net8.0\OnlineCatering.genruntimeconfig.cache
 D:\E-Project\Project\OnlineCatering\OnlineCatering\obj\Debug\net8.0\ref\OnlineCatering.dll
+D:\E-Project\Project\OnlineCatering\OnlineCatering\obj\Debug\net8.0\OnlineCatering.sourcelink.json
