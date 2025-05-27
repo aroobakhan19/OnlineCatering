@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace OnlineCatering.Models;
+
+public partial class Login
+{
+    public int Id { get; set; }
+
+    public string UserName { get; set; } = null!;
+
+    public string UserPassword { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
+
+    public string Phone { get; set; } = null!;
+
+    public string UserAddress { get; set; } = null!;
+
+    public DateTime? CreationDate { get; set; }
+}

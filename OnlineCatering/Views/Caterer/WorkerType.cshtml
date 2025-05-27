@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OnlineCatering.Models.WorkerType>
+
+@{
+    ViewData["Title"] = "WorkerType";
+}
+
+<h1>WorkerType</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerType1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayPerDay)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerType1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayPerDay)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WorkerTypeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WorkerTypeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WorkerTypeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
