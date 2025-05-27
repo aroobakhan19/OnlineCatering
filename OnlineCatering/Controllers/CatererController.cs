@@ -347,6 +347,40 @@ namespace OnlineCatering.Controllers
 
         }
 
+        public IActionResult deleteWorker(int id)
+        {
+            var worker = db.Workers
+                   .Include(w => w.WorkerType) 
+                   .FirstOrDefault(w => w.WorkerId == id);
+
+            return View(worker);
+        }
+
+        [HttpPost, ActionName("deleteWorker")]
+        [ValidateAntiForgeryToken]
+        public IActionResult deleteConfirmationWorker(int id)
+        {
+            var worker = db.Workers.Find(id);
+            if (worker == null) return NotFound();
+
+            db.Workers.Remove(worker);
+            db.SaveChanges();
+
+            return RedirectToAction("Workers");
+        }
+
+
+        public IActionResult workerDetail(int id) 
+        {
+            var worker = db.Workers
+                   .Include(w => w.WorkerType) 
+                   .FirstOrDefault(w => w.WorkerId == id);
+
+
+            if (worker == null) return NotFound();
+            return View(worker);
+        }
+
         //Controller of Worker
 
     }

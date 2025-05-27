@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteWorker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVXb3JrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteWorkerType.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVXb3JrZXJUeXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Menu_Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxNZW51X0NhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/workerDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclx3b3JrZXJEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Workers.cshtml]
