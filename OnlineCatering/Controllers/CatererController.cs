@@ -150,10 +150,7 @@ namespace OnlineCatering.Controllers
         public IActionResult deleteMenuConfirmed(int id) 
         {
             var Menu = db.Menus.Find(id);
-            if (Menu == null)
-            {
-                return NotFound();
-            }
+            if (Menu == null) return NotFound();
             db.Menus.Remove(Menu);
             db.SaveChanges();
             return RedirectToAction("listMenu");
@@ -216,29 +213,139 @@ namespace OnlineCatering.Controllers
 
         //Controller of Menu
 
+        //Controller of WorkerType 
+
+        public  IActionResult AddWorkersType()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddWorkersType(WorkerType workerType)
+        {
+            if (ModelState.IsValid)
+            {
+                db.WorkerTypes.Add(workerType);
+                db.SaveChanges();
+            }
+            return RedirectToAction("WorkerType");
+        }
+
+        [HttpGet]
+        public IActionResult WorkerType()
+        {
+            return View(db.WorkerTypes.ToList());
+        }
+
+
+        [HttpGet]
+        public IActionResult editWorkerType(int id)
+        {
+            var workerType = db.WorkerTypes.Find(id);
+            if (workerType == null) return NotFound();
+            return View(workerType);
+        }
+
+        [HttpPost]
+        public IActionResult editWorkerType(int id, WorkerType workerType)
+        {
+            var existingWorkerType = db.WorkerTypes.Find(id);
+            if (existingWorkerType == null) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                existingWorkerType.WorkerType1 = workerType.WorkerType1;
+                existingWorkerType.PayPerDay = workerType.PayPerDay;
+                db.SaveChanges();
+            }
+            return RedirectToAction("WorkerType");
+
+        }
+
+
+        [HttpGet]
+        public IActionResult workerTypeDetail(int id) 
+        {
+            var workerType = (from data in db.WorkerTypes where data.WorkerTypeId == id select data).FirstOrDefault();
+            return View(workerType);
+        }
+
+        [HttpGet]
+        public IActionResult deleteWorkerType(int id)
+        {
+            var workerType = db.WorkerTypes.Find(id);
+            if (workerType == null) return NotFound();
+            return View(workerType);
+        }
+        
+        [HttpPost, ActionName("deleteWorkerType")]
+        [ValidateAntiForgeryToken]
+        public IActionResult deleteWorkerTypeConfirmed(int id)
+        {
+            var workerType = db.WorkerTypes.Find(id);
+            if (workerType == null) return NotFound();
+            db.WorkerTypes.Remove(workerType);
+            db.SaveChanges();
+            return RedirectToAction("WorkerType");
+        }
+
+        //Controller of WorkerType 
+
         //Controller of Worker
 
         public IActionResult AddWorkers()
         {
+            ViewData["WorkerTypeId"] = new SelectList(db.WorkerTypes, "WorkerTypeId", "WorkerType1");
             return View();
         }
         [HttpPost]
         public IActionResult AddWorkers(Worker workers)
         {
+            ViewData["WorkerTypeId"] = new SelectList(db.WorkerTypes, "WorkerTypeId", "WorkerType1");
+
             if (ModelState.IsValid)
             {
                 db.Workers.Add(workers);
                 db.SaveChanges();
             }
-                return RedirectToAction("Workers");
+            return RedirectToAction("Workers");
         }
 
         public IActionResult Workers()
         {
-            return View(db.Workers.ToList());
+            return View(db.Workers.Include(m=> m.WorkerType).ToList());
         }
 
+        [HttpGet]
+        public IActionResult editWorkers(int id)
+        {
+            ViewData["WorkerTypeId"] = new SelectList(db.WorkerTypes, "WorkerTypeId", "WorkerType1");
 
+            var worker = db.Workers.Find(id);
+            return View(worker);
+        }
+
+        [HttpPost]
+        public IActionResult editWorkers(int id,  Worker worker)
+        {
+            ViewData["WorkerTypeId"] = new SelectList(db.WorkerTypes, "WorkerTypeId", "WorkerType1");
+
+            var existingWorker = db.Workers.Find(id);
+            if (existingWorker == null) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                existingWorker.Name = worker.Name;
+                existingWorker.Address = worker.Address;
+                existingWorker.Phone = worker.Phone;
+                existingWorker.Mobile = worker.Mobile;
+                existingWorker.DateOfJoin = worker.DateOfJoin;
+                existingWorker.WorkerTypeId = worker.WorkerTypeId;
+                db.SaveChanges();
+            return RedirectToAction("Workers");
+            }
+            return View(worker);
+
+        }
 
         //Controller of Worker
 

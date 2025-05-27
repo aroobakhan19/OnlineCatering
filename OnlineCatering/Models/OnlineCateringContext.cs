@@ -15,7 +15,9 @@ public partial class OnlineCateringContext : DbContext
     {
     }
 
-    public virtual DbSet<Caterer> Caterers { get; set; }
+    public virtual DbSet<CatererLogin> CatererLogins { get; set; }
+
+    public virtual DbSet<Login> Logins { get; set; }
 
     public virtual DbSet<Menu> Menus { get; set; }
 
@@ -37,22 +39,36 @@ public partial class OnlineCateringContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Caterer>(entity =>
+        modelBuilder.Entity<CatererLogin>(entity =>
         {
-            entity.HasKey(e => e.CatererId).HasName("PK__Caterer__41AC128076326CC3");
+            entity.HasKey(e => e.Id).HasName("PK__CatererL__3214EC074CDD9BA9");
 
-            entity.ToTable("Caterer");
+            entity.ToTable("CatererLogin");
 
-            entity.Property(e => e.CatererId).ValueGeneratedNever();
-            entity.Property(e => e.Address)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.Name)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.PinCode)
-                .HasMaxLength(10)
-                .IsUnicode(false);
+            entity.Property(e => e.Address).HasMaxLength(100);
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Password).HasMaxLength(255);
+            entity.Property(e => e.Phone).HasMaxLength(50);
+            entity.Property(e => e.RegDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Restaurant).HasMaxLength(100);
+        });
+
+        modelBuilder.Entity<Login>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Login__3214EC0738A733C0");
+
+            entity.ToTable("Login");
+
+            entity.Property(e => e.CreationDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.Phone).HasMaxLength(50);
+            entity.Property(e => e.UserAddress).HasMaxLength(100);
+            entity.Property(e => e.UserName).HasMaxLength(100);
+            entity.Property(e => e.UserPassword).HasMaxLength(255);
         });
 
         modelBuilder.Entity<Menu>(entity =>
@@ -117,11 +133,10 @@ public partial class OnlineCateringContext : DbContext
 
         modelBuilder.Entity<Worker>(entity =>
         {
-            entity.HasKey(e => e.WorkerId).HasName("PK__Worker__077C8826C3E7F892");
+            entity.HasKey(e => e.WorkerId).HasName("PK__tmp_ms_x__077C88269536219D");
 
             entity.ToTable("Worker");
 
-            entity.Property(e => e.WorkerId).ValueGeneratedNever();
             entity.Property(e => e.Address)
                 .HasMaxLength(255)
                 .IsUnicode(false);
@@ -137,11 +152,11 @@ public partial class OnlineCateringContext : DbContext
 
             entity.HasOne(d => d.Caterer).WithMany(p => p.Workers)
                 .HasForeignKey(d => d.CatererId)
-                .HasConstraintName("FK__Worker__CatererI__3C69FB99");
+                .HasConstraintName("FK__Worker__CatererI__59063A47");
 
             entity.HasOne(d => d.WorkerType).WithMany(p => p.Workers)
                 .HasForeignKey(d => d.WorkerTypeId)
-                .HasConstraintName("FK__Worker__WorkerTy__3B75D760");
+                .HasConstraintName("FK__Worker__WorkerTy__5812160E");
         });
 
         modelBuilder.Entity<WorkerSalary>(entity =>
@@ -161,16 +176,15 @@ public partial class OnlineCateringContext : DbContext
 
             entity.HasOne(d => d.Worker).WithMany(p => p.WorkerSalaries)
                 .HasForeignKey(d => d.WorkerId)
-                .HasConstraintName("FK__WorkerSal__Worke__3F466844");
+                .HasConstraintName("FK__WorkerSal__Worke__571DF1D5");
         });
 
         modelBuilder.Entity<WorkerType>(entity =>
         {
-            entity.HasKey(e => e.WorkerTypeId).HasName("PK__WorkerTy__691BC5492880FCD7");
+            entity.HasKey(e => e.WorkerTypeId).HasName("PK__tmp_ms_x__691BC549959BB90D");
 
             entity.ToTable("WorkerType");
 
-            entity.Property(e => e.WorkerTypeId).ValueGeneratedNever();
             entity.Property(e => e.PayPerDay).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.WorkerType1)
                 .HasMaxLength(100)

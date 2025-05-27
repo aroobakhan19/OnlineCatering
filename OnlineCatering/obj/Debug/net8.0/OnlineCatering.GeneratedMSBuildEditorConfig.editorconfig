@@ -40,8 +40,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxBZGRXb3JrZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/AddWorkersType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxBZGRXb3JrZXJzVHlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteWorkerType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVXb3JrZXJUeXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/delete_MenuCategory.cshtml]
@@ -60,6 +68,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxlZGl0TWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/editWorkers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxlZGl0V29ya2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/editWorkerType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxlZGl0V29ya2VyVHlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Edit_MenuCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxFZGl0X01lbnVDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,12 +92,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxXb3JrZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/WorkerType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxXb3JrZXJUeXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/workerTypeDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclx3b3JrZXJUeXBlRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Login/CatererLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2F0ZXJlckxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Login/CatererReg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2F0ZXJlclJlZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Login/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbnVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Shared/Error.cshtml]
