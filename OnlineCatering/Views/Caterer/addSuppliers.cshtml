@@ -1,16 +1,16 @@
-﻿@model OnlineCatering.Models.Worker
+﻿@model OnlineCatering.Models.Supplier
 
 @{
-    ViewData["Title"] = "AddWorkers";
+    ViewData["Title"] = "addSuppliers";
 }
 
-<h1>AddWorkers</h1>
+<h1>addSuppliers</h1>
 
-<h4>Worker</h4>
+<h4>Supplier</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddWorkers">
+        <form asp-action="addSuppliers">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -23,6 +23,11 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Pincode" class="control-label"></label>
+                <input asp-for="Pincode" class="form-control" />
+                <span asp-validation-for="Pincode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Phone" class="control-label"></label>
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
@@ -32,16 +37,7 @@
                 <input asp-for="Mobile" class="form-control" />
                 <span asp-validation-for="Mobile" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="WorkerTypeId" class="control-label"></label>
-                <select asp-for="WorkerTypeId" class ="form-control" asp-items="ViewBag.WorkerTypeId"></select>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="DateOfJoin" class="control-label"></label>
-                <input asp-for="DateOfJoin" class="form-control" />
-                <span asp-validation-for="DateOfJoin" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -50,7 +46,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Suppliers">Back to List</a>
 </div>
 
 @section Scripts {

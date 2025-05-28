@@ -10,14 +10,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="addMenu" enctype="multipart/form-data">
-            >
+        <form asp-action="addMenu">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="MenuItemNo" class="control-label"></label>
-                <input asp-for="MenuItemNo" class="form-control" />
-                <span asp-validation-for="MenuItemNo" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="ItemName" class="control-label"></label>
                 <input asp-for="ItemName" class="form-control" />
@@ -35,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" type="file" name="file" class="form-control" />
+                <input asp-for="Image" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">

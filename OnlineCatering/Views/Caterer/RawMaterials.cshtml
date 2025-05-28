@@ -1,0 +1,35 @@
+﻿@model IEnumerable<OnlineCatering.Models.RawMaterial>
+
+@{
+    ViewData["Title"] = "RawMaterials";
+}
+
+<h1>RawMaterials</h1>
+
+<p>
+    <a asp-action="AddRawMaterials">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="editRawMaterial" asp-route-id="@item.IngredientNo">Edit</a> |
+                <a asp-action="detailRawMaterial" asp-route-id="@item.IngredientNo">Details</a> |
+                <a asp-action="deleteRawMaterial" asp-route-id="@item.IngredientNo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

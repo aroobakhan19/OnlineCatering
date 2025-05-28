@@ -73,11 +73,10 @@ public partial class OnlineCateringContext : DbContext
 
         modelBuilder.Entity<Menu>(entity =>
         {
-            entity.HasKey(e => e.MenuItemNo).HasName("PK__tmp_ms_x__8943AFF08CB38F19");
+            entity.HasKey(e => e.MenuItemNo).HasName("PK__tmp_ms_x__8943AFF061284C6D");
 
             entity.ToTable("Menu");
 
-            entity.Property(e => e.MenuItemNo).ValueGeneratedNever();
             entity.Property(e => e.Description).HasColumnType("text");
             entity.Property(e => e.Image).HasMaxLength(255);
             entity.Property(e => e.ItemName)
@@ -87,7 +86,7 @@ public partial class OnlineCateringContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Menus)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Menu__CategoryId__4AB81AF0");
+                .HasConstraintName("FK__Menu__CategoryId__5BE2A6F2");
         });
 
         modelBuilder.Entity<MenuCategory>(entity =>
@@ -103,11 +102,10 @@ public partial class OnlineCateringContext : DbContext
 
         modelBuilder.Entity<RawMaterial>(entity =>
         {
-            entity.HasKey(e => e.IngredientNo).HasName("PK__RawMater__BEAED985F0674354");
+            entity.HasKey(e => e.IngredientNo).HasName("PK__tmp_ms_x__BEAED985D3C80BE9");
 
             entity.ToTable("RawMaterial");
 
-            entity.Property(e => e.IngredientNo).ValueGeneratedNever();
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false);
@@ -115,11 +113,10 @@ public partial class OnlineCateringContext : DbContext
 
         modelBuilder.Entity<Supplier>(entity =>
         {
-            entity.HasKey(e => e.SupplierId).HasName("PK__Supplier__4BE666B4A8F77E1E");
+            entity.HasKey(e => e.SupplierId).HasName("PK__tmp_ms_x__4BE666B4D312012F");
 
             entity.ToTable("Supplier");
 
-            entity.Property(e => e.SupplierId).ValueGeneratedNever();
             entity.Property(e => e.Address)
                 .HasMaxLength(255)
                 .IsUnicode(false);
@@ -129,6 +126,10 @@ public partial class OnlineCateringContext : DbContext
             entity.Property(e => e.Pincode)
                 .HasMaxLength(10)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.Caterer).WithMany(p => p.Suppliers)
+                .HasForeignKey(d => d.CatererId)
+                .HasConstraintName("FK_Supplier_CatererLogin");
         });
 
         modelBuilder.Entity<Worker>(entity =>

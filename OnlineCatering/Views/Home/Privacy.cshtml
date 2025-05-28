@@ -1,6 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+
+@if (HttpContextAccessor.HttpContext.Session.GetString("CatererName") != null)
+{
+    <p>Welcome, @HttpContextAccessor.HttpContext.Session.GetString("CatererId")!</p>
+    <p>Welcome, @HttpContextAccessor.HttpContext.Session.GetString("CatererName")!</p>
+}else{
+<p>
+    Welcome</p>
+}
