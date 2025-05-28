@@ -301,9 +301,15 @@ namespace OnlineCatering.Controllers
         public IActionResult AddWorkers(Worker workers)
         {
             ViewData["WorkerTypeId"] = new SelectList(db.WorkerTypes, "WorkerTypeId", "WorkerType1");
+            int? catererId = HttpContext.Session.GetInt32("UserId");
 
+            if (catererId == null)
+            {
+                return RedirectToAction("CatererLogin", "Login");
+            }
             if (ModelState.IsValid)
             {
+                workers.CatererId = catererId.Value;
                 db.Workers.Add(workers);
                 db.SaveChanges();
             }
@@ -312,7 +318,13 @@ namespace OnlineCatering.Controllers
 
         public IActionResult Workers()
         {
-            return View(db.Workers.Include(m=> m.WorkerType).ToList());
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                return RedirectToAction("CatererLogin", "Login");
+            }
+            return View(db.Workers.Include(m=> m.WorkerType).Where(s => s.CatererId == catererId.Value).ToList());
         }
 
         [HttpGet]
@@ -347,7 +359,236 @@ namespace OnlineCatering.Controllers
 
         }
 
+        public IActionResult deleteWorker(int id)
+        {
+            var worker = db.Workers
+                   .Include(w => w.WorkerType) 
+                   .FirstOrDefault(w => w.WorkerId == id);
+
+            return View(worker);
+        }
+
+        [HttpPost, ActionName("deleteWorker")]
+        [ValidateAntiForgeryToken]
+        public IActionResult deleteConfirmationWorker(int id)
+        {
+            var worker = db.Workers.Find(id);
+            if (worker == null) return NotFound();
+
+            db.Workers.Remove(worker);
+            db.SaveChanges();
+
+            return RedirectToAction("Workers");
+        }
+
+
+        public IActionResult workerDetail(int id) 
+        {
+            var worker = db.Workers
+                   .Include(w => w.WorkerType) 
+                   .FirstOrDefault(w => w.WorkerId == id);
+
+
+            if (worker == null) return NotFound();
+            return View(worker);
+        }
+
         //Controller of Worker
+
+
+
+        //Controllers of Raw Material
+
+        public IActionResult addRawMaterials()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult addRawMaterials(RawMaterial rawMaterial)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(rawMaterial);
+            }
+
+            db.RawMaterials.Add(rawMaterial);
+            db.SaveChanges();
+            return RedirectToAction("RawMaterials");
+        }
+
+        [HttpGet]
+        public IActionResult RawMaterials()
+        {
+            var RawMaterial = db.RawMaterials.ToList();
+            return View(RawMaterial);
+        }
+
+
+        [HttpGet]
+        public IActionResult editRawMaterial(int id)
+        {
+            var existingMaterial = db.RawMaterials.Find(id);
+            if (existingMaterial == null) return NotFound();
+            return View(existingMaterial);
+        }
+
+        [HttpPost]
+        public IActionResult editRawMaterial(RawMaterial rawMaterial, int id)
+        {
+            var existingMaterial = db.RawMaterials.Find(id);
+            if (existingMaterial == null) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                existingMaterial.Name = rawMaterial.Name;
+                db.SaveChanges();
+                return RedirectToAction("RawMaterials");
+
+            }
+
+            return View(existingMaterial);
+        }
+
+
+        [HttpGet]
+        public IActionResult detailRawMaterial(int id)
+        {
+            var existingMaterial = (from data in db.RawMaterials where data.IngredientNo == id select data)
+                .FirstOrDefault();
+
+            return View(existingMaterial);
+        }
+
+        [HttpGet]
+        public IActionResult deleteRawMaterial(int id)
+        {
+             var existingMaterial = db.RawMaterials.Find(id);
+            return View(existingMaterial);
+        }
+
+        [HttpPost, ActionName("deleteRawMaterial")]
+        [ValidateAntiForgeryToken]
+        public IActionResult deletedRawMaterial(int id)
+        {
+            var existingMaterial = db.RawMaterials.Find(id);
+            if(existingMaterial == null) return NotFound();
+
+            db.RawMaterials.Remove(existingMaterial);
+            db.SaveChanges() ;
+            return RedirectToAction("RawMaterials");
+
+        }
+
+        //Controllers of Raw Material
+
+
+
+        //Controller of Supplier
+
+        [HttpGet]
+        public IActionResult Suppliers()
+        {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                return RedirectToAction("CatererLogin", "Login");
+            }
+
+            var suppliers = db.Suppliers
+                .Include(s => s.Caterer)
+                .Where(s => s.CatererId == catererId.Value)
+                .ToList();
+
+            return View(suppliers);
+        }
+
+
+        [HttpGet]
+        public IActionResult addSuppliers()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult addSuppliers(Supplier supplier)
+        {
+            if (supplier == null) return NotFound();
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
+
+            if (ModelState.IsValid)
+            {
+                supplier.CatererId = catererId.Value;
+                db.Suppliers.Add(supplier);
+                db.SaveChanges();
+                return RedirectToAction("Suppliers");
+            }
+            return View(supplier);
+        }
+
+        [HttpGet]
+        public IActionResult deleteSuppliers(int id)
+        {
+            var supplier = db.Suppliers.Find(id);
+            if (supplier == null) return NotFound();
+            return View(supplier);
+        }
+
+        [HttpPost, ActionName("deleteSuppliers")]
+        [ValidateAntiForgeryToken]
+        public IActionResult deleteSuppliersConfrmed(int id)
+        {
+            var supplier = db.Suppliers.Find(id);
+            if(supplier == null) return NotFound();
+            db.Suppliers.Remove(supplier);
+            db.SaveChanges();
+            return RedirectToAction("Suppliers");
+        }
+
+        [HttpGet]
+        public IActionResult detailSupplier(int id)
+        {
+            var supplier = (from data  in db.Suppliers where data.SupplierId == id select data).FirstOrDefault();
+            if (supplier == null) return NotFound();
+            return View(supplier);
+        }
+
+        [HttpGet]
+        public IActionResult editSupplier(int id)
+        {
+            var supplier = db.Suppliers.Find(id);
+            return View(supplier);
+        }
+
+        [HttpPost]
+        public IActionResult editSupplier(int id, Supplier supplier)
+        {
+            var existingsupplier = db.Suppliers.Find(id);
+            if(existingsupplier == null) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                existingsupplier.Name = supplier.Name;
+                existingsupplier.Address = supplier.Address;
+                existingsupplier.Pincode= supplier.Pincode;
+                existingsupplier.Phone = supplier.Phone;
+                existingsupplier.Mobile = supplier.Mobile;
+
+                db.SaveChanges();
+                return RedirectToAction("Suppliers");
+            }
+            return View(existingsupplier);
+        }
+
+
+        //Controller of Supplier
 
     }
 }

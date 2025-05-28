@@ -36,6 +36,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxhZGRNZW51Q2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/addRawMaterials.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxhZGRSYXdNYXRlcmlhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/addSuppliers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxhZGRTdXBwbGllcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/AddWorkers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxBZGRXb3JrZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +54,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteRawMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVSYXdNYXRlcmlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteSuppliers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVTdXBwbGllcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteWorker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZWxldGVXb3JrZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/deleteWorkerType.cshtml]
@@ -60,12 +80,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZXRhaWxNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/detailRawMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxkZXRhaWxSYXdNYXRlcmlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Detail_MenuCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxEZXRhaWxfTWVudUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/editMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxlZGl0TWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/editRawMaterial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxlZGl0UmF3TWF0ZXJpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/editWorkers.cshtml]
@@ -86,6 +114,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Menu_Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxNZW51X0NhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/RawMaterials.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxSYXdNYXRlcmlhbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Suppliers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxTdXBwbGllcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/workerDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclx3b3JrZXJEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Workers.cshtml]

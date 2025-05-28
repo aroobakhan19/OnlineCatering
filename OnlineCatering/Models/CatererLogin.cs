@@ -19,5 +19,7 @@ public partial class CatererLogin
 
     public DateTime? RegDate { get; set; }
 
+    public virtual ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
+
     public virtual ICollection<Worker> Workers { get; set; } = new List<Worker>();
 }

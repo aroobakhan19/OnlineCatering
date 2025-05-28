@@ -7,13 +7,17 @@ public partial class Supplier
 {
     public int SupplierId { get; set; }
 
-    public string? Name { get; set; }
+    public string Name { get; set; } = null!;
 
-    public string? Address { get; set; }
+    public string Address { get; set; } = null!;
 
-    public string? Pincode { get; set; }
+    public string Pincode { get; set; } = null!;
 
-    public int? Phone { get; set; }
+    public int Phone { get; set; }
 
     public int? Mobile { get; set; }
+
+    public int? CatererId { get; set; }
+
+    public virtual CatererLogin? Caterer { get; set; }
 }
