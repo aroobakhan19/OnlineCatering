@@ -27,6 +27,10 @@ public partial class OnlineCateringContext : DbContext
 
     public virtual DbSet<Supplier> Suppliers { get; set; }
 
+    public virtual DbSet<SupplierOrder> SupplierOrders { get; set; }
+
+    public virtual DbSet<SupplierOrderChild> SupplierOrderChildren { get; set; }
+
     public virtual DbSet<Worker> Workers { get; set; }
 
     public virtual DbSet<WorkerSalary> WorkerSalaries { get; set; }
@@ -41,7 +45,7 @@ public partial class OnlineCateringContext : DbContext
     {
         modelBuilder.Entity<CatererLogin>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__CatererL__3214EC074CDD9BA9");
+            entity.HasKey(e => e.Id).HasName("PK__CatererL__3214EC07BA06DF11");
 
             entity.ToTable("CatererLogin");
 
@@ -109,6 +113,11 @@ public partial class OnlineCateringContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.Caterer).WithMany(p => p.RawMaterials)
+                .HasForeignKey(d => d.CatererId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RawMaterial_ToTable");
         });
 
         modelBuilder.Entity<Supplier>(entity =>
@@ -126,10 +135,45 @@ public partial class OnlineCateringContext : DbContext
             entity.Property(e => e.Pincode)
                 .HasMaxLength(10)
                 .IsUnicode(false);
+        });
 
-            entity.HasOne(d => d.Caterer).WithMany(p => p.Suppliers)
+        modelBuilder.Entity<SupplierOrder>(entity =>
+        {
+            entity.HasKey(e => e.SuppOrderNo).HasName("PK__Supplier__41B583832D31A561");
+
+            entity.ToTable("SupplierOrder");
+
+            entity.Property(e => e.EstimatedAmount).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Caterer).WithMany(p => p.SupplierOrders)
                 .HasForeignKey(d => d.CatererId)
-                .HasConstraintName("FK_Supplier_CatererLogin");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__SupplierO__Cater__7A672E12");
+
+            entity.HasOne(d => d.Supplier).WithMany(p => p.SupplierOrders)
+                .HasForeignKey(d => d.SupplierId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__SupplierO__Suppl__7B5B524B");
+        });
+
+        modelBuilder.Entity<SupplierOrderChild>(entity =>
+        {
+            entity.HasKey(e => new { e.SuppOrderNo, e.IngredientNo }).HasName("PK__Supplier__0A5F6E1B43A97487");
+
+            entity.ToTable("SupplierOrderChild");
+
+            entity.Property(e => e.Quantity).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.RatePerKg).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.IngredientNoNavigation).WithMany(p => p.SupplierOrderChildren)
+                .HasForeignKey(d => d.IngredientNo)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__SupplierO__Ingre__7D439ABD");
+
+            entity.HasOne(d => d.SuppOrderNoNavigation).WithMany(p => p.SupplierOrderChildren)
+                .HasForeignKey(d => d.SuppOrderNo)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__SupplierO__SuppO__7C4F7684");
         });
 
         modelBuilder.Entity<Worker>(entity =>
@@ -150,10 +194,6 @@ public partial class OnlineCateringContext : DbContext
             entity.Property(e => e.Phone)
                 .HasMaxLength(20)
                 .IsUnicode(false);
-
-            entity.HasOne(d => d.Caterer).WithMany(p => p.Workers)
-                .HasForeignKey(d => d.CatererId)
-                .HasConstraintName("FK__Worker__CatererI__59063A47");
 
             entity.HasOne(d => d.WorkerType).WithMany(p => p.Workers)
                 .HasForeignKey(d => d.WorkerTypeId)

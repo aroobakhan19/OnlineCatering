@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxhZGRSYXdNYXRlcmlhbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/AddSupplierOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxBZGRTdXBwbGllck9yZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/addSuppliers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxhZGRTdXBwbGllcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -110,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/listMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxsaXN0TWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/ListSupplierOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxMaXN0U3VwcGxpZXJPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Menu_Categories.cshtml]

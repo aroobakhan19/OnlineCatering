@@ -19,7 +19,7 @@ public partial class CatererLogin
 
     public DateTime? RegDate { get; set; }
 
-    public virtual ICollection<Supplier> Suppliers { get; set; } = new List<Supplier>();
+    public virtual ICollection<RawMaterial> RawMaterials { get; set; } = new List<RawMaterial>();
 
-    public virtual ICollection<Worker> Workers { get; set; } = new List<Worker>();
+    public virtual ICollection<SupplierOrder> SupplierOrders { get; set; } = new List<SupplierOrder>();
 }

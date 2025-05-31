@@ -21,8 +21,6 @@ public partial class Worker
 
     public DateOnly? DateOfJoin { get; set; }
 
-    public virtual CatererLogin? Caterer { get; set; }
-
     public virtual ICollection<WorkerSalary> WorkerSalaries { get; set; } = new List<WorkerSalary>();
 
     public virtual WorkerType? WorkerType { get; set; }
