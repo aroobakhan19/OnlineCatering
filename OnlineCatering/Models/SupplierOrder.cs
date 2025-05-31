@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace OnlineCatering.Models;
 
 public partial class SupplierOrder
 {
     public int SuppOrderNo { get; set; }
-    [Required]
-    [DataType(DataType.Date)]
-    public DateTime OrderDate { get; set; }
-    [Required]
-    public int SupplierId { get; set; }
-    [Required]
+
+    public DateOnly OrderDate { get; set; }
+
+    public int? SupplierId { get; set; }
+
     public decimal EstimatedAmount { get; set; }
-    [Required]
+
     public bool InvoiceDone { get; set; }
-    [Required]
-    public int CatererId { get; set; }
 
-    public virtual CatererLogin Caterer { get; set; } = null!;
+    public int? CatererId { get; set; }
 
-    public virtual Supplier Supplier { get; set; } = null!;
+    public virtual CatererLogin? Caterer { get; set; }
 
-    public virtual ICollection<SupplierOrderChild> SupplierOrderChildren { get; set; } = new List<SupplierOrderChild>();
+    public virtual Supplier? Supplier { get; set; }
+
+    public virtual SupplierOrderChild? SupplierOrderChild { get; set; }
 }

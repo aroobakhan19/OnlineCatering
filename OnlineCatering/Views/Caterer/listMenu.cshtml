@@ -2,59 +2,200 @@
 
 @{
     ViewData["Title"] = "listMenu";
+
+    // Ensure ViewBag.CategoryId is not null (just a fallback in the view for safety)
+    var categories = ViewBag.CategoryId as SelectList;
+    if (categories == null)
+    {
+        categories = new SelectList(Enumerable.Empty<SelectListItem>());
+    }
 }
 
-<h1>listMenu</h1>
+<h1>Menu List</h1>
 
-<p>
-    <a asp-action="addMenu">Create New</a>
-</p>
-<table class="table">
+<!-- Button to trigger Add Modal -->
+<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addMenuModal">
+    Create New Menu
+</button>
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                    <img src="@item.Image" alt="Image" width="100" />
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ItemName</td>
+                <td>@item.Price</td>
+                <td>@item.Description</td>
+                <td><img src="@item.Image" width="100" alt="Image" /></td>
+                <td>@item.Category?.Category</td>
+                <td>
+                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editMenuModal-@item.MenuItemNo">Edit</button>
+                    <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#detailMenuModal-@item.MenuItemNo">Details</button>
+                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteMenuModal-@item.MenuItemNo">Delete</button>
+                </td>
+            </tr>
 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Category)
-            </td>
-            <td>
-                <a asp-action="editMenu" asp-route-id="@item.MenuItemNo">Edit</a> |
-                    <a asp-action="detailMenu" asp-route-id="@item.MenuItemNo">Details</a> |
-                <a asp-action="deleteMenu" asp-route-id="@item.MenuItemNo">Delete</a>
-            </td>
-        </tr>
-}
+            <!-- Edit Modal -->
+            <div class="modal fade" id="editMenuModal-@item.MenuItemNo" tabindex="-1" aria-labelledby="editMenuLabel-@item.MenuItemNo" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form asp-action="editMenu" enctype="multipart/form-data" method="post">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editMenuLabel-@item.MenuItemNo">Edit Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" asp-for="@item.MenuItemNo" name="id" value="@item.MenuItemNo" />
+
+                                <div class="mb-3">
+                                    <label class="form-label">Item Name</label>
+                                    <input type="text" class="form-control" name="ItemName" value="@item.ItemName" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Price</label>
+                                    <input type="number" step="0.01" class="form-control" name="Price" value="@item.Price" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Description</label>
+                                    <input type="text" class="form-control" name="Description" value="@item.Description" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Image</label>
+                                    <input type="file" class="form-control" name="file" />
+                                    <img src="@item.Image" alt="Current Image"  width="100" class="mt-2" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Category</label>
+                                    <select class="form-control" name="CategoryId" required>
+                                        @foreach (var cat in categories)
+                                        {
+                                            if (cat.Value == (item.CategoryId?.ToString() ?? ""))
+                                            {
+                                                <option value="@cat.Value" selected="selected">@cat.Text</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@cat.Value">@cat.Text</option>
+                                            }
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Modal -->
+            <div class="modal fade" id="detailMenuModal-@item.MenuItemNo" tabindex="-1" aria-labelledby="detailMenuLabel-@item.MenuItemNo" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detailMenuLabel-@item.MenuItemNo">Menu Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Item Name:</strong> @item.ItemName</p>
+                            <p><strong>Price:</strong> @item.Price</p>
+                            <p><strong>Description:</strong> @item.Description</p>
+                            <p><strong>Category:</strong> @item.Category?.Category</p>
+                            <p><strong>Image:</strong><br />
+                                <img src="@item.Image" width="150" alt="Menu Image" />
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Modal -->
+            <div class="modal fade" id="deleteMenuModal-@item.MenuItemNo" tabindex="-1" aria-labelledby="deleteMenuLabel-@item.MenuItemNo" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form asp-action="deleteMenuConfirmed" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@item.MenuItemNo" />
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteMenuLabel-@item.MenuItemNo">Confirm Delete</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete <strong>@item.ItemName</strong>?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
     </tbody>
 </table>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addMenuModal" tabindex="-1" aria-labelledby="addMenuLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="addMenu" enctype="multipart/form-data" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addMenuLabel">Add New Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Item Name</label>
+                        <input type="text" class="form-control" name="ItemName" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <input type="number" step="0.01" class="form-control" name="Price" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-control" name="Description" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Image</label>
+                        <input type="file" class="form-control" name="file" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select class="form-control" name="CategoryId" required>
+                            @foreach (var cat in categories)
+                            {
+                                <option value="@cat.Value">@cat.Text</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Create Menu</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+}

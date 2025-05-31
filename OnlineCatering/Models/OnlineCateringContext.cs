@@ -116,7 +116,6 @@ public partial class OnlineCateringContext : DbContext
 
             entity.HasOne(d => d.Caterer).WithMany(p => p.RawMaterials)
                 .HasForeignKey(d => d.CatererId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_RawMaterial_ToTable");
         });
 
@@ -147,33 +146,35 @@ public partial class OnlineCateringContext : DbContext
 
             entity.HasOne(d => d.Caterer).WithMany(p => p.SupplierOrders)
                 .HasForeignKey(d => d.CatererId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SupplierO__Cater__7A672E12");
+                .HasConstraintName("FK__SupplierO__Cater__7E37BEF6");
 
             entity.HasOne(d => d.Supplier).WithMany(p => p.SupplierOrders)
                 .HasForeignKey(d => d.SupplierId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SupplierO__Suppl__7B5B524B");
+                .HasConstraintName("FK__SupplierO__Suppl__7F2BE32F");
         });
 
         modelBuilder.Entity<SupplierOrderChild>(entity =>
         {
-            entity.HasKey(e => new { e.SuppOrderNo, e.IngredientNo }).HasName("PK__Supplier__0A5F6E1B43A97487");
+            entity.HasKey(e => e.SuppOrderNo).HasName("PK__tmp_ms_x__41B58383E8D2EE95");
 
             entity.ToTable("SupplierOrderChild");
 
+            entity.Property(e => e.SuppOrderNo).ValueGeneratedNever();
             entity.Property(e => e.Quantity).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.RatePerKg).HasColumnType("decimal(10, 2)");
 
+            entity.HasOne(d => d.Caterer).WithMany(p => p.SupplierOrderChildren)
+                .HasForeignKey(d => d.CatererId)
+                .HasConstraintName("FK__SupplierO__Cater__04E4BC85");
+
             entity.HasOne(d => d.IngredientNoNavigation).WithMany(p => p.SupplierOrderChildren)
                 .HasForeignKey(d => d.IngredientNo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SupplierO__Ingre__7D439ABD");
+                .HasConstraintName("FK__SupplierO__Ingre__03F0984C");
 
-            entity.HasOne(d => d.SuppOrderNoNavigation).WithMany(p => p.SupplierOrderChildren)
-                .HasForeignKey(d => d.SuppOrderNo)
+            entity.HasOne(d => d.SuppOrderNoNavigation).WithOne(p => p.SupplierOrderChild)
+                .HasForeignKey<SupplierOrderChild>(d => d.SuppOrderNo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SupplierO__SuppO__7C4F7684");
+                .HasConstraintName("FK__SupplierO__SuppO__02FC7413");
         });
 
         modelBuilder.Entity<Worker>(entity =>

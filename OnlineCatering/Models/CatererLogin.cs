@@ -21,5 +21,7 @@ public partial class CatererLogin
 
     public virtual ICollection<RawMaterial> RawMaterials { get; set; } = new List<RawMaterial>();
 
+    public virtual ICollection<SupplierOrderChild> SupplierOrderChildren { get; set; } = new List<SupplierOrderChild>();
+
     public virtual ICollection<SupplierOrder> SupplierOrders { get; set; } = new List<SupplierOrder>();
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CNXolIgOFh5j1yqfV8TiXz5AaUo1vrkN1sKIT3EBBN4=",
+  "Hash": "t3jPUsg25BbZosaWE6AeGDiyF1ps11sQujGhVZaAHeM=",
   "Source": "OnlineCatering",
   "BasePath": "_content/OnlineCatering",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\Screenshot 2025-06-01 015310.png",
+      "SourceId": "OnlineCatering",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\",
+      "BasePath": "_content/OnlineCatering",
+      "RelativePath": "Image/Screenshot 2025-06-01 015310#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c3bkzgtxyb",
+      "Integrity": "2DctKbzgRvT0KBoIrqhd0xSsCG3WhYp4Kt/ywz2rfCg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\Screenshot 2025-06-01 015310.png"
     },
     {
       "Identity": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\t_shirt2.jpg",
@@ -1523,6 +1544,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "Image/Screenshot 2025-06-01 015310.c3bkzgtxyb.png",
+      "AssetFile": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\Screenshot 2025-06-01 015310.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4638"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2DctKbzgRvT0KBoIrqhd0xSsCG3WhYp4Kt/ywz2rfCg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 21:51:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c3bkzgtxyb"
+        },
+        {
+          "Name": "label",
+          "Value": "Image/Screenshot 2025-06-01 015310.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2DctKbzgRvT0KBoIrqhd0xSsCG3WhYp4Kt/ywz2rfCg="
+        }
+      ]
+    },
+    {
+      "Route": "Image/Screenshot 2025-06-01 015310.png",
+      "AssetFile": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\Screenshot 2025-06-01 015310.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4638"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2DctKbzgRvT0KBoIrqhd0xSsCG3WhYp4Kt/ywz2rfCg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 21:51:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2DctKbzgRvT0KBoIrqhd0xSsCG3WhYp4Kt/ywz2rfCg="
         }
       ]
     },

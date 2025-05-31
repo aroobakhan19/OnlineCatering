@@ -1,65 +1,168 @@
 ﻿@model IEnumerable<OnlineCatering.Models.Worker>
-
+@using OnlineCatering.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @{
     ViewData["Title"] = "Workers";
+    var workerTypes = new SelectList(ViewBag.WorkerTypes as IEnumerable<WorkerType>, "WorkerTypeId", "WorkerType1");
 }
 
 <h1>Workers</h1>
 
-<p>
-    <a asp-action="AddWorkers">Create New</a>
-</p>
+<!-- Button trigger modal -->
+<button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal">Add Worker</button>
+
+<!-- Create Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="AddWorkers" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createModalLabel">Add New Worker</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input name="Name" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <input name="Address" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Phone</label>
+                        <input name="Phone" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Mobile</label>
+                        <input name="Mobile" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Date of Join</label>
+                        <input name="DateOfJoin" type="date" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Worker Type</label>
+                        <select name="WorkerTypeId" class="form-control" asp-items="workerTypes"></select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mobile)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOfJoin)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WorkerType)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.First().Name)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Address)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Phone)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Mobile)</th>
+            <th>@Html.DisplayNameFor(model => model.First().DateOfJoin)</th>
+            <th>@Html.DisplayNameFor(model => model.First().WorkerType.WorkerType1)</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mobile)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfJoin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WorkerType.WorkerType1)
-            </td>
-            <td>
-                    <a asp-action="editWorkers" asp-route-id="@item.WorkerId">Edit</a> |
-                <a asp-action="workerDetail" asp-route-id="@item.WorkerId">Details</a> |
-                <a asp-action="deleteWorker" asp-route-id="@item.WorkerId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+                <td>@item.Mobile</td>
+                <td>@item.DateOfJoin</td>
+                <td>@item.WorkerType.WorkerType1</td>
+                <td>
+                    <!-- Edit Modal Button -->
+                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal-@item.WorkerId">Edit</button>
+                    <!-- Delete Modal Form -->
+                    <form asp-action="deleteWorker" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="@item.WorkerId" />
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this worker?')">Delete</button>
+                    </form>
+                    <!-- Details Modal Button -->
+                    <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#detailsModal-@item.WorkerId">Details</button>
+                </td>
+            </tr>
+
+            <!-- Edit Modal -->
+            <div class="modal fade" id="editModal-@item.WorkerId" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form asp-action="editWorkers" method="post">
+                            <input type="hidden" name="id" value="@item.WorkerId" />
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Worker</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label>Name</label>
+                                    <input name="Name" class="form-control" value="@item.Name" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Address</label>
+                                    <input name="Address" class="form-control" value="@item.Address" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Phone</label>
+                                    <input name="Phone" class="form-control" value="@item.Phone" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Mobile</label>
+                                    <input name="Mobile" class="form-control" value="@item.Mobile" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Date of Join</label>
+                                    <input  name="DateOfJoin" type="date" class="form-control" value="@item.DateOfJoin" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Worker Type</label>
+                                    <select name="WorkerTypeId" class="form-control" asp-items="workerTypes" asp-for="@item.WorkerTypeId"></select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details Modal -->
+            <div class="modal fade" id="detailsModal-@item.WorkerId" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Worker Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Name:</strong> @item.Name</p>
+                            <p><strong>Address:</strong> @item.Address</p>
+                            <p><strong>Phone:</strong> @item.Phone</p>
+                            <p><strong>Mobile:</strong> @item.Mobile</p>
+                            <p><strong>Date of Join:</strong> @item.DateOfJoin</p>
+                            <p><strong>Worker Type:</strong> @item.WorkerType.WorkerType1</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        // You can add custom JS here if needed
+    </script>
+}
