@@ -19,5 +19,5 @@ public partial class Supplier
 
     public int? CatererId { get; set; }
 
-    public virtual CatererLogin? Caterer { get; set; }
+    public virtual ICollection<SupplierOrder> SupplierOrders { get; set; } = new List<SupplierOrder>();
 }

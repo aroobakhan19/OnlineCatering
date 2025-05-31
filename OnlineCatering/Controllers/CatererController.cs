@@ -21,6 +21,13 @@ namespace OnlineCatering.Controllers
         [HttpPost]
         public IActionResult addMenuCategory(MenuCategory menuCategory)
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             if (ModelState.IsValid)
             {
                 db.MenuCategories.Add(menuCategory);
@@ -32,12 +39,26 @@ namespace OnlineCatering.Controllers
         [HttpGet]
         public IActionResult Menu_Categories()
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             return View(db.MenuCategories.ToList());
         }
 
         [HttpGet]
         public IActionResult Edit_MenuCategory(int id)
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             var data = db.MenuCategories.Find(id);
             if (data == null)
             {
@@ -49,6 +70,13 @@ namespace OnlineCatering.Controllers
         [HttpPost]
         public IActionResult Edit_MenuCategory(int id, MenuCategory menuCategory)
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             if (ModelState.IsValid)
             {
                 db.Update(menuCategory);
@@ -59,6 +87,13 @@ namespace OnlineCatering.Controllers
 
         public IActionResult Detail_MenuCategory(int id)
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             var t = (from data in db.MenuCategories where data.CategoryId == id select data).FirstOrDefault();
 
             return View(t);
@@ -66,13 +101,27 @@ namespace OnlineCatering.Controllers
 
         [HttpGet]
         public IActionResult delete_MenuCategory(int id) {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             var data = db.MenuCategories.Find(id);
             return View(data);
         }
 
         [HttpPost, ActionName("delete_MenuCategory")]
         [ValidateAntiForgeryToken]
-        public IActionResult deleteConfirmed(int id) { 
+        public IActionResult deleteConfirmed(int id) {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             var category =  db.MenuCategories.Find(id);
             if (category == null)
             {
@@ -90,6 +139,13 @@ namespace OnlineCatering.Controllers
 
         public IActionResult addMenu()
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                // If CatererId is not found in session, redirect to login or show error
+                return RedirectToAction("CatererLogin", "Login");
+            }
             ViewData["CategoryId"] = new SelectList(db.MenuCategories, "CategoryId", "Category");
             return View();
         }
@@ -407,11 +463,17 @@ namespace OnlineCatering.Controllers
         [HttpPost]
         public IActionResult addRawMaterials(RawMaterial rawMaterial)
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                return RedirectToAction("CatererLogin", "Login");
+            }
             if (!ModelState.IsValid)
             {
                 return View(rawMaterial);
             }
-
+            rawMaterial.CatererId = catererId.Value;
             db.RawMaterials.Add(rawMaterial);
             db.SaveChanges();
             return RedirectToAction("RawMaterials");
@@ -420,6 +482,12 @@ namespace OnlineCatering.Controllers
         [HttpGet]
         public IActionResult RawMaterials()
         {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+
+            if (catererId == null)
+            {
+                return RedirectToAction("CatererLogin", "Login");
+            }
             var RawMaterial = db.RawMaterials.ToList();
             return View(RawMaterial);
         }
@@ -497,12 +565,12 @@ namespace OnlineCatering.Controllers
             }
 
             var suppliers = db.Suppliers
-                .Include(s => s.Caterer)
                 .Where(s => s.CatererId == catererId.Value)
                 .ToList();
 
             return View(suppliers);
         }
+
 
 
         [HttpGet]
@@ -590,5 +658,157 @@ namespace OnlineCatering.Controllers
 
         //Controller of Supplier
 
+
+
+
+        // CREATE - GET
+    public IActionResult AddSupplierOrder()
+    {
+        int? catererId = HttpContext.Session.GetInt32("UserId");
+        if (catererId == null)
+        {
+            return RedirectToAction("CatererLogin", "Login");
+        }
+
+            var suppliers = db.Suppliers
+                          .Where(s => s.CatererId == catererId.Value)
+                          .ToList();
+
+            ViewData["SupplierId"] = new SelectList(suppliers, "SupplierId", "Name");
+            return View();
+    }
+
+    // CREATE - POST
+    [HttpPost]
+    public IActionResult AddSupplierOrder(SupplierOrder order)
+    {
+        int? catererId = HttpContext.Session.GetInt32("UserId");
+        if (catererId == null)
+        {
+                Console.WriteLine("Caterer must be login!");
+
+                return RedirectToAction("CatererLogin", "Login");
+        }
+            if (!ModelState.IsValid)
+            {
+                foreach (var key in ModelState.Keys)
+                {
+                    var state = ModelState[key];
+                    foreach (var error in state.Errors)
+                    {
+                        Console.WriteLine($"Model error on '{key}': {error.ErrorMessage}");
+                    }
+                }
+                Console.WriteLine("Not Saved successfully!");
+                Console.WriteLine("Caterer", catererId);
+            }
+
+            if (ModelState.IsValid)
+            {
+                order.CatererId = catererId.Value;
+                db.SupplierOrders.Add(order);
+                db.SaveChanges();
+                Console.WriteLine("Saved successfully!");
+
+                return RedirectToAction("ListSupplierOrder");
+            }
+
+            var suppliers = db.Suppliers
+                          .Where(s => s.CatererId == catererId.Value)
+                          .ToList();
+
+            ViewData["SupplierId"] = new SelectList(suppliers, "SupplierId", "Name");
+
+            return View(order);
+    }
+
+    // READ - LIST
+    public IActionResult ListSupplierOrder()
+    {
+        int? catererId = HttpContext.Session.GetInt32("UserId");
+        if (catererId == null)
+        {
+            return RedirectToAction("CatererLogin", "Login");
+        }
+
+        var orders = db.SupplierOrders
+            .Include(o => o.Supplier)
+            .Where(o => o.CatererId == catererId.Value)
+            .ToList();
+
+        return View(orders);
+    }
+
+    // READ - DETAILS
+    public IActionResult DetailSupplierOrder(int id)
+    {
+        var order = db.SupplierOrders
+            .Include(o => o.Supplier)
+            .FirstOrDefault(o => o.SuppOrderNo == id);
+
+        if (order == null)
+            return NotFound();
+
+        return View(order);
+    }
+
+    // DELETE - GET
+    public IActionResult DeleteSupplierOrder(int id)
+    {
+        var order = db.SupplierOrders.Find(id);
+        if (order == null)
+            return NotFound();
+
+        return View(order);
+    }
+
+    // DELETE - POST
+    [HttpPost, ActionName("DeleteSupplierOrder")]
+    [ValidateAntiForgeryToken]
+    public IActionResult DeleteConfirmed(int id)
+    {
+        var order = db.SupplierOrders.Find(id);
+        if (order == null)
+            return NotFound();
+
+        db.SupplierOrders.Remove(order);
+        db.SaveChanges();
+        return RedirectToAction("ListSupplierOrder");
+    }
+
+    // UPDATE - GET
+    public IActionResult EditSupplierOrder(int id)
+    {
+        var order = db.SupplierOrders.Find(id);
+        if (order == null)
+            return NotFound();
+
+        ViewData["SupplierId"] = new SelectList(db.Suppliers, "SupplierId", "Name");
+        return View(order);
+    }
+
+    // UPDATE - POST
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult EditSupplierOrder(SupplierOrder updatedOrder)
+    {
+        if (ModelState.IsValid)
+        {
+            var existingOrder = db.SupplierOrders.Find(updatedOrder.SuppOrderNo);
+            if (existingOrder == null)
+                return NotFound();
+
+            existingOrder.OrderDate = updatedOrder.OrderDate;
+            existingOrder.SupplierId = updatedOrder.SupplierId;
+            existingOrder.EstimatedAmount = updatedOrder.EstimatedAmount;
+            existingOrder.InvoiceDone = updatedOrder.InvoiceDone;
+
+            db.SaveChanges();
+            return RedirectToAction("ListSupplierOrder");
+        }
+
+        ViewData["SupplierId"] = new SelectList(db.Suppliers, "SupplierId", "Name", updatedOrder.SupplierId);
+        return View(updatedOrder);
+    }
     }
 }
