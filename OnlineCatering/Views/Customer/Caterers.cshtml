@@ -1,0 +1,28 @@
+﻿@model List<OnlineCatering.Models.ViewModels.CatererViewModel>
+
+@{
+    ViewData["Title"] = "Caterers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Available Caterers</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>Name</th><th>Email</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var caterer in Model)
+        {
+            <tr>
+                <td>@caterer.Name</td>
+                <td>@caterer.Email</td>
+                <td>
+                    <a href="@Url.Action("StartChatWithCaterer", "Customer", new { catererId = caterer.Id })" class="btn btn-primary">
+                        Message
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

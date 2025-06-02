@@ -19,6 +19,10 @@ public partial class CatererLogin
 
     public DateTime? RegDate { get; set; }
 
+    public virtual ICollection<Message> MessageFromCaterers { get; set; } = new List<Message>();
+
+    public virtual ICollection<Message> MessageToCaterers { get; set; } = new List<Message>();
+
     public virtual ICollection<RawMaterial> RawMaterials { get; set; } = new List<RawMaterial>();
 
     public virtual ICollection<SupplierOrderChild> SupplierOrderChildren { get; set; } = new List<SupplierOrderChild>();

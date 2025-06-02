@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Caterer Messages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Optional: Customize active highlight if Bootstrap's default is not enough */
+    .list-group-item.active {
+        background-color: #0d6efd; /* Bootstrap primary blue */
+        color: white;
+        font-weight: 600;
+    }
+</style>
+
+<div class="row" style="height: 85vh;">
+    <!-- Left Sidebar - Customer List -->
+    <div class="col-md-4 border-end overflow-auto">
+        <h5 class="mt-3">Customers</h5>
+        <ul class="list-group" id="customerList">
+            <!-- Filled by JS -->
+        </ul>
+    </div>
+
+    <!-- Right Side - Chat Box -->
+    <div class="col-md-8 d-flex flex-column" id="chatArea" style="display: none;">
+        <div class="border-bottom p-2 bg-light">
+            <strong id="customerName">Chat</strong>
+        </div>
+        <div id="messageList" class="flex-grow-1 overflow-auto p-3" style="height: 60vh;">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="p-2 border-top">
+            <form id="replyForm" class="d-flex">
+                <input type="hidden" id="toCustomerId" />
+                <input type="text" class="form-control me-2" id="replyText" placeholder="Type a message..." autocomplete="off" />
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            loadCustomerList();
+
+            function loadCustomerList() {
+                $.get("/Message/GetCustomerThreads", function (data) {
+                    $("#customerList").empty();
+                    data.forEach(function (customer) {
+                        $("#customerList").append(`
+                            <li class="list-group-item list-group-item-action" data-id="${customer.id}" data-name="${customer.name}">
+                                ${customer.name} <br/><small>${customer.email}</small>
+                            </li>
+                        `);
+                    });
+                });
+            }
+
+            // Handle click and highlight selected chat in blue
+            $(document).on("click", ".list-group-item", function () {
+                let customerId = $(this).data("id");
+                let customerName = $(this).data("name");
+
+                // Remove active class from all items, then add to selected
+                $("#customerList li").removeClass("active");
+                $(this).addClass("active");
+
+                $("#toCustomerId").val(customerId);
+                $("#customerName").text(customerName);
+                $("#chatArea").show();
+                loadMessages(customerId);
+            });
+
+            function loadMessages(customerId) {
+                $.get("/Message/GetMessagesWithCustomer/" + customerId, function (messages) {
+                    $("#messageList").empty();
+                    messages.forEach(function (msg) {
+                        const align = msg.isFromCaterer ? "text-end" : "text-start";
+                        const bgColor = msg.isFromCaterer ? "bg-primary text-white" : "bg-light";
+                        const deleteBtn = msg.isFromCaterer
+                            ? `<a href="/Message/Delete_Message/${msg.id}" class="ms-2 text-danger text-decoration-none" title="Delete">🗑️</a>`
+                            : "";
+
+                        $("#messageList").append(`
+                            <div class="mb-2 ${align}">
+                                <div class="d-inline-block p-2 rounded ${bgColor}">
+                                    ${msg.content} ${deleteBtn}
+                                </div><br/>
+                                <small class="text-muted">${msg.sentAt}</small>
+                            </div>
+                        `);
+                    });
+                });
+            }
+
+            $("#replyForm").submit(function (e) {
+                e.preventDefault();
+                const content = $("#replyText").val().trim();
+                const toId = $("#toCustomerId").val();
+
+                if (!toId) {
+                    alert("Please select a customer before sending a message.");
+                    return;
+                }
+                if (!content) {
+                    alert("Please type a message.");
+                    return;
+                }
+
+                $.post("/Message/SendMessage", { toCustomerId: toId, content: content }, function () {
+                    $("#replyText").val("");
+                    loadMessages(toId);
+                }).fail(function () {
+                    alert("Failed to send message. Please try again.");
+                });
+            });
+        });
+    </script>
+}
