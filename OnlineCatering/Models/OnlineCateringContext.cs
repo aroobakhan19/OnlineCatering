@@ -23,6 +23,8 @@ public partial class OnlineCateringContext : DbContext
 
     public virtual DbSet<MenuCategory> MenuCategories { get; set; }
 
+    public virtual DbSet<Message> Messages { get; set; }
+
     public virtual DbSet<RawMaterial> RawMaterials { get; set; }
 
     public virtual DbSet<Supplier> Suppliers { get; set; }
@@ -102,6 +104,33 @@ public partial class OnlineCateringContext : DbContext
             entity.Property(e => e.Category)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<Message>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Message__3214EC0740E339FA");
+
+            entity.ToTable("Message");
+
+            entity.Property(e => e.SentAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.FromCaterer).WithMany(p => p.MessageFromCaterers)
+                .HasForeignKey(d => d.FromCatererId)
+                .HasConstraintName("FK_Message_FromCaterer");
+
+            entity.HasOne(d => d.FromCustomer).WithMany(p => p.MessageFromCustomers)
+                .HasForeignKey(d => d.FromCustomerId)
+                .HasConstraintName("FK_Message_FromCustomer");
+
+            entity.HasOne(d => d.ToCaterer).WithMany(p => p.MessageToCaterers)
+                .HasForeignKey(d => d.ToCatererId)
+                .HasConstraintName("FK_Message_ToCaterer");
+
+            entity.HasOne(d => d.ToCustomer).WithMany(p => p.MessageToCustomers)
+                .HasForeignKey(d => d.ToCustomerId)
+                .HasConstraintName("FK_Message_ToCustomer");
         });
 
         modelBuilder.Entity<RawMaterial>(entity =>

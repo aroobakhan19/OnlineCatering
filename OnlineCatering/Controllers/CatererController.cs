@@ -680,149 +680,196 @@ namespace OnlineCatering.Controllers
         //cONTROLLER OF SUPPLIERORDERCHILD
 
 
-        // GET: Add SupplierOrderChild
-        public IActionResult AddSupplierOrderChild()
-        {
-            int? catererId = HttpContext.Session.GetInt32("UserId");
-            if (catererId == null)
-                return RedirectToAction("CatererLogin", "Login");
-
-            // Load Supplier Orders for this caterer to select from
-            var supplierOrders = db.SupplierOrders
-                .Where(so => so.CatererId == catererId)
-                .ToList();
-
-            // Load RawMaterials for Ingredients dropdown
-            var rawMaterials = db.RawMaterials.ToList();
-
-            ViewData["SuppOrderNo"] = new SelectList(supplierOrders, "SuppOrderNo", "SuppOrderNo");
-            ViewData["IngredientNo"] = new SelectList(rawMaterials, "IngredientNo", "Name");
-
-            return View(new SupplierOrderChild());
-        }
-
-        // POST: Add SupplierOrderChild
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult AddSupplierOrderChild(SupplierOrderChild orderChild)
-        {
-            int? catererId = HttpContext.Session.GetInt32("UserId");
-            if (catererId == null)
-                return RedirectToAction("CatererLogin", "Login");
-
-            if (!ModelState.IsValid)
-            {
-                var supplierOrders = db.SupplierOrders.Where(so => so.CatererId == catererId).ToList();
-                var rawMaterials = db.RawMaterials.ToList();
-
-                ViewData["SuppOrderNo"] = new SelectList(supplierOrders, "SuppOrderNo", "SuppOrderNo", orderChild.SuppOrderNo);
-                ViewData["IngredientNo"] = new SelectList(rawMaterials, "IngredientNo", "Name", orderChild.IngredientNo);
-                return View(orderChild);
-            }
-
-            // Optional: You might want to verify that the SuppOrderNo belongs to the current caterer.
-            var suppOrder = db.SupplierOrders.Find(orderChild.SuppOrderNo);
-            if (suppOrder == null || suppOrder.CatererId != catererId)
-                return Unauthorized();
-
-            db.SupplierOrderChildren.Add(orderChild);
-            db.SaveChanges();
-
-            return RedirectToAction("ListSupplierOrderChild");
-        }
-
-        // GET: List SupplierOrderChild for this caterer
         public IActionResult ListSupplierOrderChild()
         {
             int? catererId = HttpContext.Session.GetInt32("UserId");
             if (catererId == null)
                 return RedirectToAction("CatererLogin", "Login");
 
-            var orderChildren = db.SupplierOrderChildren
-                .Include(s => s.IngredientNoNavigation)
-                .ToList();
+            var parentOrders = db.SupplierOrders
+                        .Where(o => o.CatererId == catererId.Value)
+                        .Include(o => o.Supplier)
+                        .Select(o => new
+                        {
+                            o.SuppOrderNo,
+                            DisplayText = o.Supplier.Name + " (Order #" + o.SuppOrderNo + ")"
+                        })
+                        .ToList();
+            ViewData["SuppOrderNo"] = new SelectList(parentOrders, "SuppOrderNo", "DisplayText");
 
-            return View(orderChildren); // This matches the view expecting SupplierOrderChild
-      
+            var ingredients = db.RawMaterials
+                    .Select(r => new { r.IngredientNo, r.Name })
+                    .ToList();
+            ViewData["IngredientNo"] = new SelectList(ingredients, "IngredientNo", "Name");
 
+
+            var list = db.SupplierOrderChildren
+             .Include(c => c.Caterer)
+             .Include(c => c.IngredientNoNavigation)
+             .Include(c => c.SuppOrderNoNavigation)
+               .ThenInclude(o => o.Supplier)
+             .Where(c => c.CatererId == catererId.Value)
+             .ToList();
+
+            return View(list);
         }
 
-        // GET: Detail SupplierOrderChild
+        // DETAILS
         public IActionResult DetailSupplierOrderChild(int id)
         {
-            var orderChild = db.SupplierOrderChildren
-                .Include(soc => soc.SuppOrderNoNavigation)
-                .Include(soc => soc.IngredientNoNavigation)
-                .FirstOrDefault(soc => soc.SuppOrderNo == id);
+            var item = db.SupplierOrderChildren
+                .Include(c => c.Caterer)
+                .Include(c => c.IngredientNoNavigation)
+                .Include(c => c.SuppOrderNoNavigation)
+                .FirstOrDefault(c => c.SuppOrderNo == id);
 
-            if (orderChild == null)
+            if (item == null)
                 return NotFound();
 
-            return View(orderChild);
+            return View(item);
         }
 
-        // POST: Delete SupplierOrderChild
-        [HttpPost]
-        public IActionResult DeleteSupplierOrderChild(int id)
+        // ADD - GET
+        public IActionResult AddSupplierOrderChild()
         {
-            var orderChild = db.SupplierOrderChildren.Find(id);
-            if (orderChild == null)
-                return NotFound();
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+            if (catererId == null)
+                return RedirectToAction("CatererLogin", "Login");
 
-            db.SupplierOrderChildren.Remove(orderChild);
+            var parentOrders = db.SupplierOrders
+                          .Where(o => o.CatererId == catererId.Value)
+                          .Include(o => o.Supplier)
+                          .Select(o => new
+                          {
+                              o.SuppOrderNo,
+                              DisplayText = o.Supplier.Name + " (Order #" + o.SuppOrderNo + ")"
+                          })
+                          .ToList();
+            ViewData["SuppOrderNo"] = new SelectList(parentOrders, "SuppOrderNo", "DisplayText");
+
+            var ingredients = db.RawMaterials
+                    .Select(r => new { r.IngredientNo, r.Name })
+                    .ToList();
+            ViewData["IngredientNo"] = new SelectList(ingredients, "IngredientNo", "Name");
+
+            return View(new SupplierOrderChild());
+        }
+
+        // ADD - POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddSupplierOrderChild(SupplierOrderChild child)
+        {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+            if (catererId == null)
+                return RedirectToAction("CatererLogin", "Login");
+
+            if (!ModelState.IsValid)
+            {
+                var parentOrders = db.SupplierOrders
+                        .Where(o => o.CatererId == catererId.Value)
+                        .Include(o => o.Supplier)
+                        .Select(o => new
+                        {
+                            o.SuppOrderNo,
+                            DisplayText = o.Supplier.Name + " (Order #" + o.SuppOrderNo + ")"
+                        })
+                        .ToList();
+                ViewData["SuppOrderNo"] = new SelectList(parentOrders, "SuppOrderNo", "DisplayText");
+
+                var ingredients = db.RawMaterials
+                        .Select(r => new { r.IngredientNo, r.Name })
+                        .ToList();
+                ViewData["IngredientNo"] = new SelectList(ingredients, "IngredientNo", "Name");
+                return View(child);
+            }
+
+            child.CatererId = catererId;
+            db.SupplierOrderChildren.Add(child);
             db.SaveChanges();
 
             return RedirectToAction("ListSupplierOrderChild");
         }
 
-        // GET: Edit SupplierOrderChild
-        [HttpGet]
+        // EDIT - GET
         public IActionResult EditSupplierOrderChild(int id)
         {
-            var orderChild = db.SupplierOrderChildren.Find(id);
-            if (orderChild == null)
-                return NotFound();
-
-            var catererId = HttpContext.Session.GetInt32("UserId");
+            int? catererId = HttpContext.Session.GetInt32("UserId");
             if (catererId == null)
                 return RedirectToAction("CatererLogin", "Login");
-
-            var supplierOrders = db.SupplierOrders.Where(so => so.CatererId == catererId).ToList();
-            var rawMaterials = db.RawMaterials.ToList();
-
-            ViewData["SuppOrderNo"] = new SelectList(supplierOrders, "SuppOrderNo", "SuppOrderNo", orderChild.SuppOrderNo);
-            ViewData["IngredientNo"] = new SelectList(rawMaterials, "IngredientNo", "Name", orderChild.IngredientNo);
-
-            return View(orderChild);
-        }
-
-        // POST: Update SupplierOrderChild
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult EditSupplierOrderChild(SupplierOrderChild updatedOrderChild)
-        {
-            if (!ModelState.IsValid)
-            {
-                var catererId = HttpContext.Session.GetInt32("UserId");
-                var supplierOrders = db.SupplierOrders.Where(so => so.CatererId == catererId).ToList();
-                var rawMaterials = db.RawMaterials.ToList();
-
-                ViewData["SuppOrderNo"] = new SelectList(supplierOrders, "SuppOrderNo", "SuppOrderNo", updatedOrderChild.SuppOrderNo);
-                ViewData["IngredientNo"] = new SelectList(rawMaterials, "IngredientNo", "Name", updatedOrderChild.IngredientNo);
-
-                return View(updatedOrderChild);
-            }
-
-            var existingOrderChild = db.SupplierOrderChildren.Find(updatedOrderChild.SuppOrderNo);
-            if (existingOrderChild == null)
+            var child = db.SupplierOrderChildren.Find(id);
+            if (child == null)
                 return NotFound();
 
-            existingOrderChild.IngredientNo = updatedOrderChild.IngredientNo;
-            existingOrderChild.Quantity = updatedOrderChild.Quantity;
-            existingOrderChild.RatePerKg = updatedOrderChild.RatePerKg;
+            var parentOrders = db.SupplierOrders
+                         .Where(o => o.CatererId == catererId.Value)
+                         .Include(o => o.Supplier)
+                         .Select(o => new
+                         {
+                             o.SuppOrderNo,
+                             DisplayText = o.Supplier.Name + " (Order #" + o.SuppOrderNo + ")"
+                         })
+                         .ToList();
+            ViewData["SuppOrderNo"] = new SelectList(parentOrders, "SuppOrderNo", "DisplayText");
+
+            var ingredients = db.RawMaterials
+                    .Select(r => new { r.IngredientNo, r.Name })
+                    .ToList();
+            ViewData["IngredientNo"] = new SelectList(ingredients, "IngredientNo", "Name");
+
+            return View(child);
+        }
+
+        // EDIT - POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditSupplierOrderChild(SupplierOrderChild updated)
+        {
+            int? catererId = HttpContext.Session.GetInt32("UserId");
+            if (catererId == null)
+                return RedirectToAction("CatererLogin", "Login");
+            if (!ModelState.IsValid)
+            {
+                var parentOrders = db.SupplierOrders
+                         .Where(o => o.CatererId == catererId.Value)
+                         .Include(o => o.Supplier)
+                         .Select(o => new
+                         {
+                             o.SuppOrderNo,
+                             DisplayText = o.Supplier.Name + " (Order #" + o.SuppOrderNo + ")"
+                         })
+                         .ToList();
+                ViewData["SuppOrderNo"] = new SelectList(parentOrders, "SuppOrderNo", "DisplayText");
+
+                var ingredients = db.RawMaterials
+                        .Select(r => new { r.IngredientNo, r.Name })
+                        .ToList();
+                ViewData["IngredientNo"] = new SelectList(ingredients, "IngredientNo", "Name");
+                return View(updated);
+            }
+
+            var existing = db.SupplierOrderChildren.Find(updated.SuppOrderNo);
+            if (existing == null)
+                return NotFound();
+
+            existing.IngredientNo = updated.IngredientNo;
+            existing.Quantity = updated.Quantity;
+            existing.RatePerKg = updated.RatePerKg;
 
             db.SaveChanges();
+            return RedirectToAction("ListSupplierOrderChild");
+        }
 
+        // DELETE
+        [HttpPost]
+        public IActionResult DeleteSupplierOrderChild(int id)
+        {
+            var child = db.SupplierOrderChildren.Find(id);
+            if (child == null)
+                return NotFound();
+
+            db.SupplierOrderChildren.Remove(child);
+            db.SaveChanges();
             return RedirectToAction("ListSupplierOrderChild");
         }
     }

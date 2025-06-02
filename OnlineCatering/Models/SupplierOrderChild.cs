@@ -19,5 +19,5 @@ public partial class SupplierOrderChild
 
     public virtual RawMaterial? IngredientNoNavigation { get; set; }
 
-    public virtual SupplierOrder? SuppOrderNoNavigation { get; set; } = null!;
+    public virtual SupplierOrder SuppOrderNoNavigation { get; set; } = null!;
 }

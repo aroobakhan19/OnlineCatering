@@ -18,4 +18,8 @@ public partial class Login
     public string UserAddress { get; set; } = null!;
 
     public DateTime? CreationDate { get; set; }
+
+    public virtual ICollection<Message> MessageFromCustomers { get; set; } = new List<Message>();
+
+    public virtual ICollection<Message> MessageToCustomers { get; set; } = new List<Message>();
 }
