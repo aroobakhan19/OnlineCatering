@@ -201,11 +201,7 @@ namespace OnlineCatering.Controllers
             }
 
             return RedirectToAction("ChatCustomer"); // or any customer chat view you create
-        }
-
-
-
-
+        } 
 
     }
 }
