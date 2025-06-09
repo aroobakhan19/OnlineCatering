@@ -19,13 +19,19 @@ public partial class CatererLogin
 
     public DateTime? RegDate { get; set; }
 
+    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+
+    public virtual ICollection<FavouriteCaterer> FavouriteCaterers { get; set; } = new List<FavouriteCaterer>();
+
+    public virtual ICollection<MenuCategory> MenuCategories { get; set; } = new List<MenuCategory>();
+
+    public virtual ICollection<Menu> Menus { get; set; } = new List<Menu>();
+
     public virtual ICollection<Message> MessageFromCaterers { get; set; } = new List<Message>();
 
     public virtual ICollection<Message> MessageToCaterers { get; set; } = new List<Message>();
 
     public virtual ICollection<RawMaterial> RawMaterials { get; set; } = new List<RawMaterial>();
-
-    public virtual ICollection<SupplierOrderChild> SupplierOrderChildren { get; set; } = new List<SupplierOrderChild>();
 
     public virtual ICollection<SupplierOrder> SupplierOrders { get; set; } = new List<SupplierOrder>();
 }

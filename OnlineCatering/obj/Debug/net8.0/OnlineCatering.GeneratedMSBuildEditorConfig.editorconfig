@@ -28,16 +28,16 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Bookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxCb29raW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/listMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxsaXN0TWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/ListSupplierOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxMaXN0U3VwcGxpZXJPcmRlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/ListSupplierOrderChild.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxMaXN0U3VwcGxpZXJPcmRlckNoaWxkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Caterer/Menu_Categories.cshtml]
@@ -60,8 +60,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxXb3JrZXJUeXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Customer/BookWithMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQm9va1dpdGhNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Customer/Caterers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2F0ZXJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Customer/FavouriteCaterers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRmF2b3VyaXRlQ2F0ZXJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Customer/MenuByCaterer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTWVudUJ5Q2F0ZXJlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/E-Project/Project/OnlineCatering/OnlineCatering/Views/Home/Index.cshtml]

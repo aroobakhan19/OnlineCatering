@@ -1,0 +1,46 @@
+﻿@model List<OnlineCatering.Models.Booking>
+
+<h2>Your Bookings</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Booking Date</th>
+            <th>Customer</th>
+            <th>Venue</th>
+            <th>Payment Mode</th>
+            <th>Status</th>
+            <th>Bill Amount</th>
+            <th>Menu Items</th>
+            <th>Messages</th> <!-- New column -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.BookingDate.ToString("yyyy-MM-dd")</td>
+                <td>@booking.Customer.UserName</td>
+                <td>@booking.Venue</td>
+                <td>@booking.PaymentMode</td>
+                <td>@booking.BookingStatus</td>
+                <td>@(booking.BillAmount.HasValue ? "Rs" + booking.BillAmount.Value.ToString("N2") : "N/A")</td>
+                <td>
+                    <ul>
+                        @foreach (var item in booking.BookingMenuItems)
+                        {
+                            <li>@item.MenuItemNoNavigation.ItemName</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <!-- Link/button to open chat with this booking's customer -->
+                    <a asp-controller="Message" asp-action="Chat" asp-route-customerId="@booking.CustomerId"
+                       class="btn btn-sm btn-primary">
+                        Chat
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

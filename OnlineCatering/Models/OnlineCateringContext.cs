@@ -15,7 +15,13 @@ public partial class OnlineCateringContext : DbContext
     {
     }
 
+    public virtual DbSet<Booking> Bookings { get; set; }
+
+    public virtual DbSet<BookingMenuItem> BookingMenuItems { get; set; }
+
     public virtual DbSet<CatererLogin> CatererLogins { get; set; }
+
+    public virtual DbSet<FavouriteCaterer> FavouriteCaterers { get; set; }
 
     public virtual DbSet<Login> Logins { get; set; }
 
@@ -31,8 +37,6 @@ public partial class OnlineCateringContext : DbContext
 
     public virtual DbSet<SupplierOrder> SupplierOrders { get; set; }
 
-    public virtual DbSet<SupplierOrderChild> SupplierOrderChildren { get; set; }
-
     public virtual DbSet<Worker> Workers { get; set; }
 
     public virtual DbSet<WorkerSalary> WorkerSalaries { get; set; }
@@ -45,6 +49,51 @@ public partial class OnlineCateringContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Booking>(entity =>
+        {
+            entity.HasKey(e => e.BookingId).HasName("PK__Booking__73951AEDF86F8D0D");
+
+            entity.ToTable("Booking");
+
+            entity.Property(e => e.BillAmount).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.BookingStatus)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasDefaultValue("Pending");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.PaymentMode)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Venue).HasMaxLength(255);
+
+            entity.HasOne(d => d.Caterer).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.CatererId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_BOOKINGFROMCUSTOMERTOCATERER");
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.CustomerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_BOOKINGFROMCUSTOMER");
+        });
+
+        modelBuilder.Entity<BookingMenuItem>(entity =>
+        {
+            entity.HasKey(e => e.BookingItemId).HasName("PK__BookingM__0CBA44C045791F4F");
+
+            entity.HasOne(d => d.Booking).WithMany(p => p.BookingMenuItems)
+                .HasForeignKey(d => d.BookingId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BookingMe__Booki__32AB8735");
+
+            entity.HasOne(d => d.MenuItemNoNavigation).WithMany(p => p.BookingMenuItems)
+                .HasForeignKey(d => d.MenuItemNo)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BookingMe__MenuI__339FAB6E");
+        });
+
         modelBuilder.Entity<CatererLogin>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__CatererL__3214EC07BA06DF11");
@@ -59,6 +108,27 @@ public partial class OnlineCateringContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.Restaurant).HasMaxLength(100);
+        });
+
+        modelBuilder.Entity<FavouriteCaterer>(entity =>
+        {
+            entity.HasKey(e => e.FavouriteId).HasName("PK__Favourit__5944B59A0282C753");
+
+            entity.ToTable("FavouriteCaterer");
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.Caterer).WithMany(p => p.FavouriteCaterers)
+                .HasForeignKey(d => d.CatererId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_FAVLIST_CATERERID");
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.FavouriteCaterers)
+                .HasForeignKey(d => d.CustomerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_FAVLIST_CUSTOMERID");
         });
 
         modelBuilder.Entity<Login>(entity =>
@@ -93,6 +163,10 @@ public partial class OnlineCateringContext : DbContext
             entity.HasOne(d => d.Category).WithMany(p => p.Menus)
                 .HasForeignKey(d => d.CategoryId)
                 .HasConstraintName("FK__Menu__CategoryId__5BE2A6F2");
+
+            entity.HasOne(d => d.CatererLogin).WithMany(p => p.Menus)
+                .HasForeignKey(d => d.CatererLoginId)
+                .HasConstraintName("FK_Menu_CatererLogin");
         });
 
         modelBuilder.Entity<MenuCategory>(entity =>
@@ -104,6 +178,10 @@ public partial class OnlineCateringContext : DbContext
             entity.Property(e => e.Category)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.CatererLogin).WithMany(p => p.MenuCategories)
+                .HasForeignKey(d => d.CatererLoginId)
+                .HasConstraintName("FK_MenuCategory_CatererLogin");
         });
 
         modelBuilder.Entity<Message>(entity =>
@@ -135,7 +213,7 @@ public partial class OnlineCateringContext : DbContext
 
         modelBuilder.Entity<RawMaterial>(entity =>
         {
-            entity.HasKey(e => e.IngredientNo).HasName("PK__tmp_ms_x__BEAED985D3C80BE9");
+            entity.HasKey(e => e.IngredientNo).HasName("PK__tmp_ms_x__BEAED9851D730242");
 
             entity.ToTable("RawMaterial");
 
@@ -167,43 +245,20 @@ public partial class OnlineCateringContext : DbContext
 
         modelBuilder.Entity<SupplierOrder>(entity =>
         {
-            entity.HasKey(e => e.SuppOrderNo).HasName("PK__Supplier__41B583832D31A561");
+            entity.HasKey(e => e.SuppOrderNo).HasName("PK__tmp_ms_x__41B58383064F53D5");
 
             entity.ToTable("SupplierOrder");
 
             entity.Property(e => e.EstimatedAmount).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.InvoicePicture).HasMaxLength(255);
 
             entity.HasOne(d => d.Caterer).WithMany(p => p.SupplierOrders)
                 .HasForeignKey(d => d.CatererId)
-                .HasConstraintName("FK__SupplierO__Cater__7E37BEF6");
+                .HasConstraintName("FK__SupplierO__Cater__1DB06A4F");
 
             entity.HasOne(d => d.Supplier).WithMany(p => p.SupplierOrders)
                 .HasForeignKey(d => d.SupplierId)
-                .HasConstraintName("FK__SupplierO__Suppl__7F2BE32F");
-        });
-
-        modelBuilder.Entity<SupplierOrderChild>(entity =>
-        {
-            entity.HasKey(e => e.SuppOrderNo).HasName("PK__tmp_ms_x__41B58383E8D2EE95");
-
-            entity.ToTable("SupplierOrderChild");
-
-            entity.Property(e => e.SuppOrderNo).ValueGeneratedNever();
-            entity.Property(e => e.Quantity).HasColumnType("decimal(10, 2)");
-            entity.Property(e => e.RatePerKg).HasColumnType("decimal(10, 2)");
-
-            entity.HasOne(d => d.Caterer).WithMany(p => p.SupplierOrderChildren)
-                .HasForeignKey(d => d.CatererId)
-                .HasConstraintName("FK__SupplierO__Cater__04E4BC85");
-
-            entity.HasOne(d => d.IngredientNoNavigation).WithMany(p => p.SupplierOrderChildren)
-                .HasForeignKey(d => d.IngredientNo)
-                .HasConstraintName("FK__SupplierO__Ingre__03F0984C");
-
-            entity.HasOne(d => d.SuppOrderNoNavigation).WithOne(p => p.SupplierOrderChild)
-                .HasForeignKey<SupplierOrderChild>(d => d.SuppOrderNo)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__SupplierO__SuppO__02FC7413");
+                .HasConstraintName("FK__SupplierO__Suppl__1EA48E88");
         });
 
         modelBuilder.Entity<Worker>(entity =>

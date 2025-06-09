@@ -3,6 +3,8 @@ wwwroot\favicon.ico
 wwwroot\Image\Screenshot 2025-06-01 015310.png
 wwwroot\Image\t_shirt2.jpg
 wwwroot\Image\t-shirts.webp
+wwwroot\InvoiceImages\Ali Importer (1).jpg
+wwwroot\InvoiceImages\t-shirts.webp
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

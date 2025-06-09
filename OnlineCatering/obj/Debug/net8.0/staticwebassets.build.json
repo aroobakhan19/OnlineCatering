@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t3jPUsg25BbZosaWE6AeGDiyF1ps11sQujGhVZaAHeM=",
+  "Hash": "fj8X7cC74+9lHB4PrzIaL1WWr/dfXngH3xKccjB5Fpc=",
   "Source": "OnlineCatering",
   "BasePath": "_content/OnlineCatering",
   "Mode": "Default",
@@ -162,6 +162,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Image\\t-shirts.webp"
+    },
+    {
+      "Identity": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Ali Importer (1).jpg",
+      "SourceId": "OnlineCatering",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\",
+      "BasePath": "_content/OnlineCatering",
+      "RelativePath": "InvoiceImages/Ali Importer (1)#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s1eteq4kkc",
+      "Integrity": "YKLtIqwLzjtZKxYxTHqp850zCEZnDZsoCwnKtCyNEik=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\InvoiceImages\\Ali Importer (1).jpg"
+    },
+    {
+      "Identity": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\t-shirts.webp",
+      "SourceId": "OnlineCatering",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\",
+      "BasePath": "_content/OnlineCatering",
+      "RelativePath": "InvoiceImages/t-shirts#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0c4thx4j1q",
+      "Integrity": "0G9EtEeIqf6aG1m2o7TThSMXCMezAfMbhobNQJU8B44=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\InvoiceImages\\t-shirts.webp"
     },
     {
       "Identity": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\js\\site.js",
@@ -1570,7 +1612,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 21:51:21 GMT"
+          "Value": "Mon, 09 Jun 2025 18:01:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1615,7 +1657,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 May 2025 21:51:21 GMT"
+          "Value": "Mon, 09 Jun 2025 18:01:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1652,7 +1694,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 05:20:21 GMT"
+          "Value": "Mon, 09 Jun 2025 18:00:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1697,7 +1739,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 05:20:21 GMT"
+          "Value": "Mon, 09 Jun 2025 18:00:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1734,7 +1776,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 21:44:43 GMT"
+          "Value": "Mon, 09 Jun 2025 17:59:13 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1779,7 +1821,171 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 21:44:43 GMT"
+          "Value": "Mon, 09 Jun 2025 17:59:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0G9EtEeIqf6aG1m2o7TThSMXCMezAfMbhobNQJU8B44="
+        }
+      ]
+    },
+    {
+      "Route": "InvoiceImages/Ali Importer (1).jpg",
+      "AssetFile": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Ali Importer (1).jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31546"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YKLtIqwLzjtZKxYxTHqp850zCEZnDZsoCwnKtCyNEik=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Jun 2025 15:33:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YKLtIqwLzjtZKxYxTHqp850zCEZnDZsoCwnKtCyNEik="
+        }
+      ]
+    },
+    {
+      "Route": "InvoiceImages/Ali Importer (1).s1eteq4kkc.jpg",
+      "AssetFile": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Ali Importer (1).jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31546"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YKLtIqwLzjtZKxYxTHqp850zCEZnDZsoCwnKtCyNEik=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Jun 2025 15:33:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s1eteq4kkc"
+        },
+        {
+          "Name": "label",
+          "Value": "InvoiceImages/Ali Importer (1).jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YKLtIqwLzjtZKxYxTHqp850zCEZnDZsoCwnKtCyNEik="
+        }
+      ]
+    },
+    {
+      "Route": "InvoiceImages/t-shirts.0c4thx4j1q.webp",
+      "AssetFile": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\t-shirts.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0G9EtEeIqf6aG1m2o7TThSMXCMezAfMbhobNQJU8B44=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Jun 2025 14:42:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0c4thx4j1q"
+        },
+        {
+          "Name": "label",
+          "Value": "InvoiceImages/t-shirts.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0G9EtEeIqf6aG1m2o7TThSMXCMezAfMbhobNQJU8B44="
+        }
+      ]
+    },
+    {
+      "Route": "InvoiceImages/t-shirts.webp",
+      "AssetFile": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\t-shirts.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0G9EtEeIqf6aG1m2o7TThSMXCMezAfMbhobNQJU8B44=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Jun 2025 14:42:00 GMT"
         },
         {
           "Name": "Cache-Control",

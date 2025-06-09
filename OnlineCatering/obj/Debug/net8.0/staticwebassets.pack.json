@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\Image\\t_shirt2.jpg"
     },
     {
+      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Ali Importer (1).jpg",
+      "PackagePath": "staticwebassets\\InvoiceImages\\Ali Importer (1).jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\t-shirts.webp",
+      "PackagePath": "staticwebassets\\InvoiceImages\\t-shirts.webp"
+    },
+    {
       "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

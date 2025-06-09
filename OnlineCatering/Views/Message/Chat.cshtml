@@ -42,36 +42,44 @@
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        let currentCustomerId = null;
+        let pollInterval = null;
+
         $(document).ready(function () {
             loadCustomerList();
+                   // Get customerId from URL query string
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-            function loadCustomerList() {
-                $.get("/Message/GetCustomerThreads", function (data) {
-                    $("#customerList").empty();
-                    data.forEach(function (customer) {
-                        $("#customerList").append(`
-                            <li class="list-group-item list-group-item-action" data-id="${customer.id}" data-name="${customer.name}">
-                                ${customer.name} <br/><small>${customer.email}</small>
-                            </li>
-                        `);
-                    });
-                });
-            }
-
-            // Handle click and highlight selected chat in blue
-            $(document).on("click", ".list-group-item", function () {
-                let customerId = $(this).data("id");
-                let customerName = $(this).data("name");
-
-                // Remove active class from all items, then add to selected
-                $("#customerList li").removeClass("active");
-                $(this).addClass("active");
-
-                $("#toCustomerId").val(customerId);
-                $("#customerName").text(customerName);
-                $("#chatArea").show();
-                loadMessages(customerId);
+           function loadCustomerList() {
+        $.get("/Message/GetCustomerThreads", function (data) {
+            $("#customerList").empty();
+            data.forEach(function (customer) {
+                $("#customerList").append(`
+                    <li class="list-group-item list-group-item-action" data-id="${customer.id}" data-name="${customer.name}">
+                        ${customer.name}<br/><small>${customer.email}</small>
+                    </li>
+                `);
             });
+
+            // After loading the customer list, if there's a customerId in URL, select it
+            const initialCustomerId = getQueryParam('customerId');
+            if (initialCustomerId) {
+                const customerItem = $("#customerList li").filter(function() {
+                    return $(this).data("id").toString() === initialCustomerId;
+                }).first();
+
+                if (customerItem.length) {
+                    customerItem.trigger("click"); // Simulate click to load chat
+                }
+            }
+        });
+    }
+
+
+
 
             function loadMessages(customerId) {
                 $.get("/Message/GetMessagesWithCustomer/" + customerId, function (messages) {
@@ -80,7 +88,8 @@
                         const align = msg.isFromCaterer ? "text-end" : "text-start";
                         const bgColor = msg.isFromCaterer ? "bg-primary text-white" : "bg-light";
                         const deleteBtn = msg.isFromCaterer
-                            ? `<a href="/Message/Delete_Message/${msg.id}" class="ms-2 text-danger text-decoration-none" title="Delete">🗑️</a>`
+                                    ? `<a href="#" class="ms-2 text-danger delete-message" data-id="${msg.id}">🗑️</a>
+        `
                             : "";
 
                         $("#messageList").append(`
@@ -92,30 +101,63 @@
                             </div>
                         `);
                     });
+                    $("#messageList").scrollTop($("#messageList")[0].scrollHeight);
                 });
             }
+
+            function startPolling(customerId) {
+                if (pollInterval) clearInterval(pollInterval);
+                pollInterval = setInterval(() => {
+                    if (currentCustomerId) {
+                        loadMessages(currentCustomerId);
+                    }
+                }, 3000);
+            }
+
+            $(document).on("click", "#customerList li", function () {
+                const customerId = $(this).data("id");
+                const customerName = $(this).data("name");
+
+                $("#toCustomerId").val(customerId);
+                $("#customerName").text(customerName);
+                $("#chatArea").show();
+
+                $("#customerList li").removeClass("active");
+                $(this).addClass("active");
+
+                currentCustomerId = customerId;
+                loadMessages(customerId);
+                startPolling(customerId);
+            });
 
             $("#replyForm").submit(function (e) {
                 e.preventDefault();
                 const content = $("#replyText").val().trim();
                 const toId = $("#toCustomerId").val();
 
-                if (!toId) {
-                    alert("Please select a customer before sending a message.");
-                    return;
-                }
-                if (!content) {
-                    alert("Please type a message.");
-                    return;
-                }
+                if (!toId || !content) return alert("Select a customer and type a message.");
 
-                $.post("/Message/SendMessage", { toCustomerId: toId, content: content }, function () {
+                $.post("/Message/SendMessage", { toCustomerId: toId, content }, function () {
                     $("#replyText").val("");
                     loadMessages(toId);
-                }).fail(function () {
-                    alert("Failed to send message. Please try again.");
                 });
             });
+
+                    $(document).on("click", ".delete-message", function (e) {
+            e.preventDefault();
+            const msgId = $(this).data("id");
+
+            if (!confirm("Are you sure you want to delete this message?")) return;
+
+            $.post("/Message/Delete_Message", { id: msgId })
+                .done(function () {
+                    loadMessages(currentCustomerId); // ✅ Refresh the chat
+                })
+                .fail(function () {
+                    alert("Failed to delete message.");
+                });
+        });
+
         });
     </script>
 }
