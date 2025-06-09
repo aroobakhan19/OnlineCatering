@@ -28,11 +28,15 @@
                         @if (userType == "Customer")
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark">Welcome, @userName</a>
+                                <a class="nav-link text-dark" asp-controller="Customer" asp-action="Caterers">Caterers</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-controller="Customer" asp-action="FavouriteCaterers">My Favourite Caterers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Login" asp-action="Logout">Logout</a>
                             </li>
+                            
                         }
                         else if (userType == "Caterer")
                         {

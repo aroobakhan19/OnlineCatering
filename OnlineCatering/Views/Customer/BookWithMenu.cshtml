@@ -1,0 +1,58 @@
+﻿@model OnlineCatering.Models.ViewModels.BookingWithMenuViewModel
+
+@{
+    ViewData["Title"] = "Book With Menu";
+    var minDate = DateTime.Today.AddDays(7).ToString("yyyy-MM-dd");
+
+}
+
+<h2>Book with Menu</h2>
+
+<form asp-action="BookWithMenu" method="post">
+    <input type="hidden" asp-for="CatererId" />
+
+    <div class="mb-3">
+        <label asp-for="BookingDate" class="form-label"></label>
+        <input asp-for="BookingDate" class="form-control" type="date" min="@minDate" />
+        <span asp-validation-for="BookingDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Venue" class="form-label"></label>
+        <input asp-for="Venue" class="form-control" />
+        <span asp-validation-for="Venue" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PaymentMode" class="form-label"></label>
+        <select asp-for="PaymentMode" class="form-select" asp-items="Model.PaymentModes">
+            <option value="">-- Select Payment Mode --</option>
+        </select>
+        <span asp-validation-for="PaymentMode" class="text-danger"></span>
+    </div>
+
+
+
+    <h4>Select Menu Items</h4>
+    <div class="mb-3">
+        @foreach (var item in Model.MenuItems)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"
+                       value="@item.MenuItemNo"
+                       name="SelectedMenuItemNos"
+                       id="menuItem_@item.MenuItemNo" />
+                <label class="form-check-label" for="menuItem_@item.MenuItemNo">
+                    @item.ItemName - @(item.Price.HasValue ? item.Price.Value.ToString("C") : "N/A")
+
+                </label>
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Book Now</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

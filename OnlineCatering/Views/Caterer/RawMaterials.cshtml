@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "RawMaterials";
 }
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
 
 <h1>RawMaterials</h1>
 
@@ -26,7 +30,11 @@
                             <label for="Name" class="form-label">Name</label>
                             <input type="text" id="Name" name="Name" class="form-control" required />
                         </div>
-
+                        <div class="form-check mb-3">
+                            <input type="hidden" name="Stocked" value="false" />
+                            <input class="form-check-input" type="checkbox" id="Stocked" name="Stocked" value="true" />
+                            <label class="form-check-label" for="Stocked">Stocked</label>
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-success">Add</button>
@@ -44,6 +52,7 @@
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>Stocked</th>
             <th></th>
         </tr>
     </thead>
@@ -52,6 +61,7 @@
         {
             <tr>
                 <td>@Html.DisplayFor(m => item.Name)</td>
+                <td>@(item.Stocked ? "Yes" : "No")</td>
                 <td>
                     <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editModal-@item.IngredientNo">
                         Edit
@@ -65,7 +75,6 @@
                         Delete
                     </button>
 
-                    <!-- Edit Modal -->
                     <!-- Edit Modal -->
                     <div class="modal fade" id="editModal-@item.IngredientNo" tabindex="-1" aria-labelledby="editModalLabel-@item.IngredientNo" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -82,6 +91,10 @@
                                         <div class="mb-3">
                                             <label for="Name-@item.IngredientNo" class="form-label">Name</label>
                                             <input type="text" id="Name-@item.IngredientNo" name="Name" class="form-control" value="@item.Name" />
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="Stocked-@item.IngredientNo" name="Stocked" value="true" @(item.Stocked ? "checked" : "") />
+                                            <label class="form-check-label" for="Stocked-@item.IngredientNo">Stocked</label>
                                         </div>
 
                                         <div class="modal-footer">
@@ -146,3 +159,8 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

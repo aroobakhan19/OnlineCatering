@@ -1,0 +1,45 @@
+﻿@model List<OnlineCatering.Models.ViewModels.CatererViewModel>
+
+@{
+    ViewData["Title"] = "My Favourite Caterers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mb-4">My Favourite Caterers</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You have no favourite caterers.</div>
+}
+else
+{
+    <div class="row">
+        @foreach (var caterer in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@caterer.Name</h5>
+                        <p class="card-text text-muted">@caterer.Email</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="@Url.Action("StartChatWithCaterer", "Customer", new { catererId = caterer.Id })" class="btn btn-primary">
+                                Message
+                            </a>
+                            <a href="@Url.Action("MenuByCaterer", "Customer", new { catererId = caterer.Id })" class="btn btn-outline-secondary">
+                                Menu
+                            </a>
+                            <a href="@Url.Action("RemoveFromFavourites", "Customer", new { catererId = caterer.Id })" class="btn btn-danger">
+                                Unfavourite
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

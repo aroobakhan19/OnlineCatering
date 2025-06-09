@@ -13,9 +13,9 @@ public partial class Supplier
 
     public string Pincode { get; set; } = null!;
 
-    public int Phone { get; set; }
+    public long Phone { get; set; }
 
-    public int? Mobile { get; set; }
+    public long? Mobile { get; set; }
 
     public int? CatererId { get; set; }
 

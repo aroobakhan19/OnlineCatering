@@ -87,7 +87,7 @@ namespace OnlineCatering.Controllers
         }
 
         // GET: Delete a message
-        [HttpGet]
+        [HttpPost]
         public IActionResult Delete_Message(int id)
         {
             int? catererId = HttpContext.Session.GetInt32("UserId");
@@ -98,9 +98,10 @@ namespace OnlineCatering.Controllers
             {
                 db.Messages.Remove(msg);
                 db.SaveChanges();
+                return Ok(); // ✅ Return OK to prevent redirect
             }
 
-            return RedirectToAction("Chat");
+            return NotFound();
         }
 
 
@@ -187,7 +188,7 @@ namespace OnlineCatering.Controllers
         }
 
         // GET: Delete message by customer (only their own messages)
-        [HttpGet]
+        [HttpPost]
         public IActionResult Delete_Message_Customer(int id)
         {
             int? customerId = HttpContext.Session.GetInt32("UserId");
@@ -198,9 +199,10 @@ namespace OnlineCatering.Controllers
             {
                 db.Messages.Remove(msg);
                 db.SaveChanges();
+                return Ok(); // ✅ Return OK to prevent redirect
             }
 
-            return RedirectToAction("ChatCustomer"); // or any customer chat view you create
+            return NotFound(); // or any customer chat view you create
         } 
 
     }

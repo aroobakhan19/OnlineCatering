@@ -19,6 +19,10 @@ public partial class Login
 
     public DateTime? CreationDate { get; set; }
 
+    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+
+    public virtual ICollection<FavouriteCaterer> FavouriteCaterers { get; set; } = new List<FavouriteCaterer>();
+
     public virtual ICollection<Message> MessageFromCustomers { get; set; } = new List<Message>();
 
     public virtual ICollection<Message> MessageToCustomers { get; set; } = new List<Message>();

@@ -15,11 +15,11 @@ public partial class SupplierOrder
 
     public bool InvoiceDone { get; set; }
 
+    public string? InvoicePicture { get; set; }
+
     public int? CatererId { get; set; }
 
     public virtual CatererLogin? Caterer { get; set; }
 
     public virtual Supplier? Supplier { get; set; }
-
-    public virtual SupplierOrderChild? SupplierOrderChild { get; set; }
 }

@@ -1,0 +1,93 @@
+﻿@model List<OnlineCatering.Models.Menu>
+
+@{
+    ViewData["Title"] = "Caterer Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var catererName = ViewBag.CatererName as string;
+    var catererId = (int)ViewBag.CatererId;
+    var categories = ViewBag.Categories as List<string>;
+    var selectedCategory = Context.Request.Query["category"].ToString();
+}
+
+<h2>@catererName's Menu</h2>
+
+<form method="get" asp-action="MenuByCaterer" asp-controller="Customer">
+    <input type="hidden" name="catererId" value="@catererId" />
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <input type="text" name="search" class="form-control" placeholder="Search by name"
+                   value="@Context.Request.Query["search"]" />
+        </div>
+        <div class="col-md-3">
+        <select name="category" class="form-control">
+    <option value="">All Categories</option>
+    @foreach (var cat in categories)
+    {
+        var selected = selectedCategory == cat ? "selected" : "";
+        @:<option value="@cat" @selected>@cat</option>
+    }
+</select>
+
+
+        </div>
+        <div class="col-md-2">
+            <input type="number" name="minPrice" step="0.01" class="form-control" placeholder="Min Price"
+                   value="@Context.Request.Query["minPrice"]" />
+        </div>
+        <div class="col-md-2">
+            <input type="number" name="maxPrice" step="0.01" class="form-control" placeholder="Max Price"
+                   value="@Context.Request.Query["maxPrice"]" />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+    </div>
+</form>
+
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">No items found matching your filter.</div>
+}
+else
+{
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img src="@item.Image" class="card-img-top" alt="@item.ItemName" style="height: 200px; object-fit: cover;" />
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ItemName</h5>
+                        <p class="card-text">Category: @item.Category?.Category</p>
+                        <p class="card-text text-success">Price: ₹@item.Price</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            let typingTimer;
+            let doneTypingInterval = 500; // ms
+
+            $('input[name="search"], input[name="minPrice"], input[name="maxPrice"]').on('keyup', function () {
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(function () {
+                    $('form').submit();
+                }, doneTypingInterval);
+            });
+
+            // Also submit on category change immediately
+            $('select[name="category"]').on('change', function () {
+                $('form').submit();
+            });
+        });
+    </script>
+}

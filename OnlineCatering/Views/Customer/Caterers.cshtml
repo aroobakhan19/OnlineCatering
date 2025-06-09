@@ -1,28 +1,54 @@
 ﻿@model List<OnlineCatering.Models.ViewModels.CatererViewModel>
 
 @{
-    ViewData["Title"] = "Caterers";
+    ViewData["Title"] = "Available Caterers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Available Caterers</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
 
-<table class="table table-striped">
-    <thead>
-        <tr><th>Name</th><th>Email</th><th>Action</th></tr>
-    </thead>
-    <tbody>
-        @foreach (var caterer in Model)
-        {
-            <tr>
-                <td>@caterer.Name</td>
-                <td>@caterer.Email</td>
-                <td>
-                    <a href="@Url.Action("StartChatWithCaterer", "Customer", new { catererId = caterer.Id })" class="btn btn-primary">
-                        Message
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<h2 class="mb-4">Available Caterers</h2>
+
+<div class="row">
+    @foreach (var caterer in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@caterer.Name</h5>
+                    <p class="card-text text-muted">@caterer.Email</p>
+                    <div class="d-grid gap-2">
+                        <a href="@Url.Action("StartChatWithCaterer", "Customer", new { catererId = caterer.Id })" class="btn btn-primary">
+                            Message
+                        </a>
+
+                        @if (caterer.IsFavourited)
+                        {
+                            <a href="@Url.Action("RemoveFromFavourites", "Customer", new { catererId = caterer.Id })" class="btn btn-danger">
+                                Unfavourite
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("AddToFavourites", "Customer", new { catererId = caterer.Id })" class="btn btn-warning">
+                                Add to Favourite
+                            </a>
+                        }
+
+                        <a asp-controller="Customer" asp-action="BookWithMenu" asp-route-catererId="@caterer.Id" class="btn btn-success">
+                            Book with Menu
+                        </a>
+
+                        <a href="@Url.Action("MenuByCaterer", "Customer", new { catererId = caterer.Id })" class="btn btn-outline-secondary">
+                            View Menu
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

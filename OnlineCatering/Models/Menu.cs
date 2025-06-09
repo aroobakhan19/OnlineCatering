@@ -17,5 +17,11 @@ public partial class Menu
 
     public int? CategoryId { get; set; }
 
+    public int? CatererLoginId { get; set; }
+
+    public virtual ICollection<BookingMenuItem> BookingMenuItems { get; set; } = new List<BookingMenuItem>();
+
     public virtual MenuCategory? Category { get; set; }
+
+    public virtual CatererLogin? CatererLogin { get; set; }
 }

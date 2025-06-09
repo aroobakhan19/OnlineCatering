@@ -29,10 +29,12 @@
         </div>
     </div>
 </div>
-
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        let currentCatererId = null;
+        let pollInterval = null;
+
         $(document).ready(function () {
             loadCatererList();
 
@@ -42,53 +44,45 @@
                 const results = regex.exec(location.search);
                 return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
             }
-        function loadCatererList() {
-            $.get("/Message/GetCatererThreads", function (data) {
-                $("#catererList").empty();
-                data.forEach(function (caterer) {
-                    $("#catererList").append(`
-                        <li class="list-group-item list-group-item-action" data-id="${caterer.id}" data-name="${caterer.name}">
-                            ${caterer.name} <br/><small>${caterer.email}</small>
-                        </li>
-                    `);
-                });
 
-                const catererId = getUrlParameter("catererId");
-                if (catererId) {
-                    // Find the list item element AFTER list rendered
-                    const item = $(`#catererList li[data-id='${catererId}']`);
-                    if (item.length) {
-                        selectCaterer(item);
-                    } else {
-                        console.warn(`Caterer with id ${catererId} not found.`);
-                        // Still set the hidden input to URL param to avoid undefined
-                        $("#toCatererId").val(catererId);
+            function loadCatererList() {
+                $.get("/Message/GetCatererThreads", function (data) {
+                    $("#catererList").empty();
+                    data.forEach(function (caterer) {
+                        $("#catererList").append(`
+                            <li class="list-group-item list-group-item-action" data-id="${caterer.id}" data-name="${caterer.name}">
+                                ${caterer.name}<br/><small>${caterer.email}</small>
+                            </li>
+                        `);
+                    });
+
+                    const catererId = getUrlParameter("catererId");
+                    if (catererId) {
+                        const item = $(`#catererList li[data-id='${catererId}']`);
+                        if (item.length) {
+                            selectCaterer(item);
+                        } else {
+                            $("#toCatererId").val(catererId);
+                        }
                     }
-                }
-            }).fail(function () {
-                alert("Failed to load caterers list.");
-            });
-        }
+                });
+            }
 
-                    function selectCaterer(item) {
-            const catererId = item.data("id");
-            const catererName = item.data("name");
-            $("#toCatererId").val(catererId);  // <- SET hidden input here
-            console.log("Selected Caterer ID set to:", catererId); // Debug log
-            $("#catererName").text(catererName);
-            $("#chatArea").show();
+            function selectCaterer(item) {
+                const catererId = item.data("id");
+                const catererName = item.data("name");
 
-            $("#catererList li").removeClass("active");
-            item.addClass("active");
+                $("#toCatererId").val(catererId);
+                $("#catererName").text(catererName);
+                $("#chatArea").show();
 
-            loadMessages(catererId);
-        }
+                $("#catererList li").removeClass("active");
+                item.addClass("active");
 
-
-            // Click on caterer to load chat
-            $(document).on("click", "#catererList li", function () {
-                selectCaterer($(this));
-            });
+                currentCatererId = catererId;
+                loadMessages(catererId);
+                startPolling(catererId);
+            }
 
             function loadMessages(catererId) {
                 $.get("/Message/GetMessagesWithCaterer/" + catererId, function (messages) {
@@ -97,7 +91,7 @@
                         const align = msg.isFromCustomer ? "text-end" : "text-start";
                         const bgColor = msg.isFromCustomer ? "bg-primary text-white" : "bg-light";
                         const deleteBtn = msg.isFromCustomer
-                            ? `<a href="/Message/Delete_Message_Customer/${msg.id}" class="ms-2 text-danger text-decoration-none" title="Delete">🗑️</a>`
+                          ? `<a href="#" class="text-danger delete-message-customer" data-id="${msg.id}">🗑️</a>`
                             : "";
 
                         $("#messageList").append(`
@@ -109,34 +103,50 @@
                             </div>
                         `);
                     });
-                }).fail(function () {
-                    alert("Failed to load messages.");
+                    $("#messageList").scrollTop($("#messageList")[0].scrollHeight);
                 });
             }
+
+                    $(document).on("click", ".delete-message-customer", function (e) {
+            e.preventDefault();
+            const msgId = $(this).data("id");
+
+            if (!confirm("Are you sure you want to delete this message?")) return;
+
+            $.post("/Message/Delete_Message_Customer", { id: msgId })
+                .done(function () {
+                    loadMessages(currentCustomerId); // or equivalent refresh function
+                })
+                .fail(function () {
+                    alert("Failed to delete message.");
+                });
+        });
+
+
+            function startPolling(catererId) {
+                if (pollInterval) clearInterval(pollInterval);
+                pollInterval = setInterval(() => {
+                    if (currentCatererId) {
+                        loadMessages(currentCatererId);
+                    }
+                }, 3000);
+            }
+
+            $(document).on("click", "#catererList li", function () {
+                selectCaterer($(this));
+            });
 
             $("#replyForm").submit(function (e) {
                 e.preventDefault();
                 const content = $("#replyText").val().trim();
                 const toId = $("#toCatererId").val();
 
-                if (!toId) {
-                    alert("Please select a caterer before sending a message.");
-                    return;
-                }
+                if (!toId || !content) return alert("Select a caterer and type a message.");
 
-                if (!content) {
-                    alert("Please type a message.");
-                    return;
-                }
-
-                $.post("/Message/SendMessageToCaterer", { toCatererId: toId, content: content })
-                    .done(function () {
-                        $("#replyText").val("");
-                        loadMessages(toId);
-                    })
-                    .fail(function () {
-                        alert("Failed to send message. Please try again.");
-                    });
+                $.post("/Message/SendMessageToCaterer", { toCatererId: toId, content }, function () {
+                    $("#replyText").val("");
+                    loadMessages(toId);
+                });
             });
         });
     </script>
