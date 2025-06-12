@@ -99,7 +99,7 @@ namespace OnlineCatering.Controllers
             }
 
             TempData["Success"] = "Caterer added to favourites!";
-            return RedirectToAction("FavouriteCaterers");
+            return RedirectToAction("Profile");
         }
 
         [HttpGet]
@@ -235,6 +235,60 @@ namespace OnlineCatering.Controllers
 
             TempData["Success"] = "Booking created successfully!";
             return RedirectToAction("Caterers", "Customer"); // or wherever you want
+        }
+
+        //[HttpGet]
+        //public IActionResult ShowMenu()
+        //{
+        //    return View(db.Menus.ToList());
+        //}
+
+
+        public IActionResult Profile()
+        {
+            int? customerId = HttpContext.Session.GetInt32("UserId");
+            if (customerId == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+
+            var user = db.Logins.FirstOrDefault(u => u.Id == customerId);
+
+            var favourites = db.FavouriteCaterers
+                .Where(f => f.CustomerId == customerId)
+                .Include(f => f.Caterer)
+                .Select(f => new CatererViewModel
+                {
+                    Id = f.Caterer.Id,
+                    Name = f.Caterer.Restaurant,
+                    Email = f.Caterer.Email
+                }).ToList();
+
+            var bookings = db.Bookings
+     .Where(b => b.CustomerId == customerId)
+     .Include(b => b.Caterer)
+     .Include(b => b.BookingMenuItems)
+         .ThenInclude(bm => bm.MenuItemNoNavigation) // ✅ correct property
+     .Select(b => new BookingViewModel
+     {
+         BookingId = b.BookingId,
+         CatererName = b.Caterer.Restaurant,
+         BookingDate = b.BookingDate.ToDateTime(TimeOnly.MinValue), // ✅ convert DateOnly to DateTime
+         Venue = b.Venue,
+         BillAmount = b.BillAmount,
+         PaymentMode = b.PaymentMode,
+         BookingStatus = b.BookingStatus,
+         MenuItems = b.BookingMenuItems
+             .Select(m => m.MenuItemNoNavigation.ItemName) // ✅ corrected here
+             .ToList()
+     })
+     .ToList();
+
+
+            ViewBag.Favourites = favourites;
+            ViewBag.Bookings = bookings;
+
+            return View(user);
         }
 
 

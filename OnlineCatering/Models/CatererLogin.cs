@@ -23,6 +23,8 @@ public partial class CatererLogin
 
     public virtual ICollection<FavouriteCaterer> FavouriteCaterers { get; set; } = new List<FavouriteCaterer>();
 
+    public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
+
     public virtual ICollection<MenuCategory> MenuCategories { get; set; } = new List<MenuCategory>();
 
     public virtual ICollection<Menu> Menus { get; set; } = new List<Menu>();

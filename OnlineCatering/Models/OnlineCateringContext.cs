@@ -23,6 +23,10 @@ public partial class OnlineCateringContext : DbContext
 
     public virtual DbSet<FavouriteCaterer> FavouriteCaterers { get; set; }
 
+    public virtual DbSet<Invoice> Invoices { get; set; }
+
+    public virtual DbSet<InvoiceItem> InvoiceItems { get; set; }
+
     public virtual DbSet<Login> Logins { get; set; }
 
     public virtual DbSet<Menu> Menus { get; set; }
@@ -129,6 +133,51 @@ public partial class OnlineCateringContext : DbContext
                 .HasForeignKey(d => d.CustomerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_FAVLIST_CUSTOMERID");
+        });
+
+        modelBuilder.Entity<Invoice>(entity =>
+        {
+            entity.HasKey(e => e.InvoiceId).HasName("PK__Invoice__D796AAB542BF3CC8");
+
+            entity.ToTable("Invoice");
+
+            entity.Property(e => e.AdditionalCharges).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.Discount).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.InvoiceDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.InvoiceFilePath).HasMaxLength(255);
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
+                .HasDefaultValue("Draft");
+            entity.Property(e => e.Tax).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.TotalAmount).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Booking).WithMany(p => p.Invoices)
+                .HasForeignKey(d => d.BookingId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Invoice__Booking__3A4CA8FD");
+
+            entity.HasOne(d => d.Caterer).WithMany(p => p.Invoices)
+                .HasForeignKey(d => d.CatererId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Invoice__Caterer__3B40CD36");
+        });
+
+        modelBuilder.Entity<InvoiceItem>(entity =>
+        {
+            entity.HasKey(e => e.InvoiceItemId).HasName("PK__InvoiceI__478FE09CEE43DDAA");
+
+            entity.ToTable("InvoiceItem");
+
+            entity.Property(e => e.ItemName).HasMaxLength(100);
+            entity.Property(e => e.Total).HasColumnType("decimal(10, 2)");
+            entity.Property(e => e.UnitPrice).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Invoice).WithMany(p => p.InvoiceItems)
+                .HasForeignKey(d => d.InvoiceId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__InvoiceIt__Invoi__3C34F16F");
         });
 
         modelBuilder.Entity<Login>(entity =>

@@ -4,32 +4,40 @@
     ViewData["Title"] = "CatererLogin";
 }
 
-<h1>CatererLogin</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-3">Caterer Login</h2>
+                    <p class="text-center text-muted mb-4">Login to manage your catering services</p>
 
-<h4>CatererLogin</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="CatererLogin">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="Email" class="form-control" placeholder="Enter your Email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-           <div class="form-group">
-                <input asp-for="Password" class="form-control" placeholder="Enter your Password" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
+                    <form asp-action="CatererLogin">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
+                        <div class="mb-3">
+                            <input asp-for="Email" class="form-control" placeholder="Enter your Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                        <div class="mb-3">
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary rounded-pill py-2">Login</button>
+                        </div>
+                    </form>
+
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="CatererReg" asp-controller="Login" class="btn btn-outline-primary btn-sm rounded-pill">Sign Up</a>
+                        <a asp-controller="Login" asp-action="Login" class="btn btn-outline-secondary btn-sm rounded-pill">Login as User</a>
+                    </div>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>
-<div>
-    <a asp-action="CatererReg">SignUp</a>
 </div>
 
 @section Scripts {

@@ -4,186 +4,209 @@
     ViewData["Title"] = "ListSupplierOrder";
 }
 
-<h1>ListSupplierOrder</h1>
+<div class="container-fluid" style="background-color: #FFFCF8; padding: 2rem;">
+    <h1 class="mb-4" style="color: #D4A762;">ListSupplierOrder</h1>
 
-<p>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSupplierOrderModal">
-        Create New Supplier Order
-    </button>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
-            <th>@Html.DisplayNameFor(model => model.EstimatedAmount)</th>
-            <th>@Html.DisplayNameFor(model => model.InvoiceDone)</th>
-            <th>Invoice Image</th>
-            <th>Supplier Name</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.OrderDate)</td>
-                <td>@Html.DisplayFor(modelItem => item.EstimatedAmount)</td>
-                <td>@Html.DisplayFor(modelItem => item.InvoiceDone)</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(item.InvoicePicture))
-                    {
-                        <img src="@item.InvoicePicture" alt="Invoice" style="max-height:60px;" />
-                    }
-                    else
-                    {
-                        <span class="text-muted">––</span>
-                    }
-                </td>
-                <td>@item.Supplier?.Name</td>
-                <td>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#editModal-@item.SuppOrderNo">Edit</a> |
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal-@item.SuppOrderNo">Details</a> |
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@item.SuppOrderNo">
-                        Delete
-                    </button>
-                </td>
-            </tr>
+    <p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSupplierOrderModal">
+            Create New Supplier Order
+        </button>
+    </p>
 
-            <!-- Details Modal -->
-            <div class="modal fade" id="detailsModal-@item.SuppOrderNo" tabindex="-1" aria-labelledby="detailsModalLabel-@item.SuppOrderNo" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title" id="detailsModalLabel-@item.SuppOrderNo">Order Details</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <ul class="list-group">
-                                <li class="list-group-item"><strong>Order Date:</strong> @item.OrderDate.ToShortDateString()</li>
-                                <li class="list-group-item"><strong>Estimated Amount:</strong> @item.EstimatedAmount</li>
-                                <li class="list-group-item"><strong>Invoice Done:</strong> @(item.InvoiceDone ? "Yes" : "No")</li>
-                                <li class="list-group-item"><strong>Supplier:</strong> @item.Supplier?.Name</li>
-                                <li class="list-group-item">
-                                    <strong>Invoice Image:</strong><br />
-                                    @if (!string.IsNullOrEmpty(item.InvoicePicture))
-                                    {
-                                        <img src="@item.InvoicePicture" alt="Invoice" style="max-width:100%;" />
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No image uploaded</span>
-                                    }
-                                </li>
-                            </ul>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.EstimatedAmount)</th>
+                    <th>@Html.DisplayNameFor(model => model.InvoiceDone)</th>
+                    <th>Invoice Image</th>
+                    <th>Supplier Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.OrderDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EstimatedAmount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InvoiceDone)</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.InvoicePicture))
+                            {
+                                <img src="@item.InvoicePicture" alt="Invoice" style="max-height:60px;" />
+                            }
+                            else
+                            {
+                                <span class="text-muted">––</span>
+                            }
+                        </td>
+                        <td>@item.Supplier?.Name</td>
+                        <td>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#editModal-@item.SuppOrderNo">Edit</a> |
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#detailsModal-@item.SuppOrderNo">Details</a> |
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@item.SuppOrderNo">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Details Modal -->
+                    <div class="modal fade" id="detailsModal-@item.SuppOrderNo" tabindex="-1" aria-labelledby="detailsModalLabel-@item.SuppOrderNo" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content border border-2 border-primary">
+                                <div class="modal-header bg-primary text-white">
+                                    <h5 class="modal-title" id="detailsModalLabel-@item.SuppOrderNo">Order Details</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <strong>Order Date:</strong>
+                                            <span>@item.OrderDate.ToShortDateString()</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <strong>Estimated Amount:</strong>
+                                            <span class="copy-text" data-bs-toggle="tooltip" title="Click to copy" style="cursor:pointer;" onclick="copyText('@item.EstimatedAmount')">@item.EstimatedAmount</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <strong>Invoice Done:</strong>
+                                            <span>@(item.InvoiceDone ? "Yes" : "No")</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <strong>Supplier:</strong>
+                                            <span class="copy-text" data-bs-toggle="tooltip" title="Click to copy" style="cursor:pointer;" onclick="copyText('@item.Supplier?.Name')">@item.Supplier?.Name</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <strong>Invoice Image:</strong>
+                                                <button class="btn btn-sm btn-outline-secondary" type="button" onclick="toggleImage(this)">Show</button>
+                                            </div>
+                                            <div class="mt-2 image-container d-none text-center">
+                                                @if (!string.IsNullOrEmpty(item.InvoicePicture))
+                                                {
+                                                    <img src="@item.InvoicePicture" alt="Invoice" class="img-fluid rounded shadow" style="max-height: 300px; cursor: zoom-in;" onclick="zoomImage(this)" />
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">No image uploaded</span>
+                                                }
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Edit Modal -->
-            <div class="modal fade" id="editModal-@item.SuppOrderNo" tabindex="-1" aria-labelledby="editModalLabel-@item.SuppOrderNo" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        @if (TempData["EditError"] != null && TempData["OpenModalId"]?.ToString() == item.SuppOrderNo.ToString())
-                        {
-                            <div class="alert alert-danger">@TempData["EditError"]</div>
-                        }
 
-                        <form asp-action="EditSupplierOrder" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="ExistingInvoicePicture" value="@item.InvoicePicture" />
-                            <div class="modal-header bg-warning text-dark">
-                                <h5 class="modal-title" id="editModalLabel-@item.SuppOrderNo">Edit Supplier Order</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" name="SuppOrderNo" value="@item.SuppOrderNo" />
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="editModal-@item.SuppOrderNo" tabindex="-1" aria-labelledby="editModalLabel-@item.SuppOrderNo" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                @if (TempData["EditError"] != null && TempData["OpenModalId"]?.ToString() == item.SuppOrderNo.ToString())
+                                {
+                                    <div class="alert alert-danger">@TempData["EditError"]</div>
+                                }
 
-                                <div class="mb-3">
-                                    <label>Order Date</label>
-                                    <input type="date" class="form-control" name="OrderDate" value="@item.OrderDate.ToString("yyyy-MM-dd")" />
-                                </div>
-                                <div class="mb-3">
-                                    <label>Estimated Amount</label>
-                                    <input type="number" class="form-control" name="EstimatedAmount" value="@item.EstimatedAmount" />
-                                </div>
-                                <div class="mb-3">
-                                    <label>Invoice Done</label>
-                                    <select class="form-control" name="InvoiceDone">
-                                        <option value="true" selected="@(item.InvoiceDone)">Yes</option>
-                                        <option value="false" selected="@(!item.InvoiceDone)">No</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label>Supplier</label>
-                                    <select class="form-control" name="SupplierId">
-                                        @{
-                                            var supplierList = ViewData["SupplierId"] as SelectList;
-                                            var selectedSupplierId = item.SupplierId.ToString();
-                                        }
-                                        @foreach (var supplier in supplierList)
-                                        {
-                                            if (supplier.Value == selectedSupplierId)
+                                <form asp-action="EditSupplierOrder" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="ExistingInvoicePicture" value="@item.InvoicePicture" />
+                                    <div class="modal-header bg-warning text-dark">
+                                        <h5 class="modal-title" id="editModalLabel-@item.SuppOrderNo">Edit Supplier Order</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="SuppOrderNo" value="@item.SuppOrderNo" />
+
+                                        <div class="mb-3">
+                                            <label>Order Date</label>
+                                            <input type="date" class="form-control" name="OrderDate" value="@item.OrderDate.ToString("yyyy-MM-dd")" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Estimated Amount</label>
+                                            <input type="number" class="form-control" name="EstimatedAmount" value="@item.EstimatedAmount" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Invoice Done</label>
+                                            <select class="form-control" name="InvoiceDone">
+                                                <option value="true" selected="@(item.InvoiceDone)">Yes</option>
+                                                <option value="false" selected="@(!item.InvoiceDone)">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Supplier</label>
+                                            <select class="form-control" name="SupplierId">
+                                                @{
+                                                    var supplierList = ViewData["SupplierId"] as SelectList;
+                                                    var selectedSupplierId = item.SupplierId.ToString();
+                                                }
+                                                @foreach (var supplier in supplierList)
+                                                {
+                                                    if (supplier.Value == selectedSupplierId)
+                                                    {
+                                                        <option value="@supplier.Value" selected>@supplier.Text</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@supplier.Value">@supplier.Text</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="InvoicePictureEdit" class="form-label">Change Invoice Image</label>
+                                            <input type="file" class="form-control" id="InvoicePictureEdit" name="file" accept="image/*" />
+                                            @if (!string.IsNullOrEmpty(item.InvoicePicture))
                                             {
-                                                <option value="@supplier.Value" selected>@supplier.Text</option>
+                                                <small class="form-text text-muted">
+                                                    Current: <img src="@item.InvoicePicture" style="max-height:40px;" />
+                                                </small>
                                             }
-                                            else
-                                            {
-                                                <option value="@supplier.Value">@supplier.Text</option>
-                                            }
-                                        }
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="InvoicePictureEdit" class="form-label">Change Invoice Image</label>
-                                    <input type="file" class="form-control" id="InvoicePictureEdit" name="file" accept="image/*" />
-                                    @if (!string.IsNullOrEmpty(item.InvoicePicture))
-                                    {
-                                        <small class="form-text text-muted">
-                                            Current: <img src="@item.InvoicePicture" style="max-height:40px;" />
-                                        </small>
-                                    }
-                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-warning">Save Changes</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-warning">Save Changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Delete Modal -->
-            <div class="modal fade" id="deleteModal-@item.SuppOrderNo" tabindex="-1" aria-labelledby="deleteModalLabel-@item.SuppOrderNo" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
-                            <h5 class="modal-title" id="deleteModalLabel-@item.SuppOrderNo">Confirm Delete</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Are you sure you want to delete the following supplier order?</p>
-                            <ul class="list-group">
-                                <li class="list-group-item"><strong>Order Date:</strong> @item.OrderDate.ToShortDateString()</li>
-                                <li class="list-group-item"><strong>Estimated Amount:</strong> @item.EstimatedAmount</li>
-                                <li class="list-group-item"><strong>Invoice Done:</strong> @(item.InvoiceDone ? "Yes" : "No")</li>
-                                <li class="list-group-item"><strong>Supplier:</strong> @item.Supplier?.Name</li>
-                            </ul>
-                        </div>
-                        <div class="modal-footer">
-                            <form asp-action="DeleteSupplierOrder" asp-route-id="@item.SuppOrderNo" method="post">
-                                <input type="hidden" name="SuppOrderNo" value="@item.SuppOrderNo" />
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
                         </div>
                     </div>
-                </div>
-            </div>
-        }
-    </tbody>
-</table>
+
+                    <!-- Delete Modal -->
+                    <div class="modal fade" id="deleteModal-@item.SuppOrderNo" tabindex="-1" aria-labelledby="deleteModalLabel-@item.SuppOrderNo" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-danger text-white">
+                                    <h5 class="modal-title" id="deleteModalLabel-@item.SuppOrderNo">Confirm Delete</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to delete the following supplier order?</p>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><strong>Order Date:</strong> @item.OrderDate.ToShortDateString()</li>
+                                        <li class="list-group-item"><strong>Estimated Amount:</strong> @item.EstimatedAmount</li>
+                                        <li class="list-group-item"><strong>Invoice Done:</strong> @(item.InvoiceDone ? "Yes" : "No")</li>
+                                        <li class="list-group-item"><strong>Supplier:</strong> @item.Supplier?.Name</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <form asp-action="DeleteSupplierOrder" asp-route-id="@item.SuppOrderNo" method="post">
+                                        <input type="hidden" name="SuppOrderNo" value="@item.SuppOrderNo" />
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <!-- Add Supplier Order Modal -->
 <div class="modal fade" id="addSupplierOrderModal" tabindex="-1" aria-labelledby="addSupplierOrderLabel" aria-hidden="true">
@@ -259,66 +282,81 @@
 </div>
 
 @section Scripts {
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1) Set min="today" and required on all date inputs
-      const today = new Date().toISOString().split('T')[0];
-      document.querySelectorAll('input[type="date"]').forEach(inp => {
-        inp.min = today;
-        inp.required = true;
-      });
-
-      // 2) Require non-negative numbers on all number inputs
-      document.querySelectorAll('input[type="number"]').forEach(inp => {
-        inp.min = 0;
-        inp.required = true;
-      });
-
-      // 3) Require a selection for your supplier dropdowns
-      document.querySelectorAll('select[name="SupplierId"]').forEach(sel => {
-        sel.required = true;
-      });
-
-      // 4) Hook form submissions for invoice-image logic + HTML5 check
-      const errorModalEl = document.getElementById('errorModal');
-      const errorModal = new bootstrap.Modal(errorModalEl);
-      const errorMsg = document.getElementById('errorModalMessage');
-
-      document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', e => {
-          // Let browser block empty/invalid required/min fields first
-          if (!form.checkValidity()) {
-            e.preventDefault();
-            errorMsg.textContent = "Please fill all required fields and ensure dates/amounts are valid.";
-            errorModal.show();
-            return;
-          }
-
-          // Then enforce invoice-image rule
-          const invoiceDone = form.querySelector('[name="InvoiceDone"]');
-          const fileInput = form.querySelector('[name="file"]');
-                 const existing = form.querySelector('[name="ExistingInvoicePicture"]').value;
-                if (invoiceDone && existing === 'True' && (!fileInput || fileInput.files.length === 0)) {
-
-            e.preventDefault();
-            errorMsg.textContent = "Please upload an invoice image before marking the invoice as done.";
-            errorModal.show();
+    <script>
+        // Toggle image visibility
+        function toggleImage(btn) {
+            const container = btn.closest('.list-group-item').querySelector('.image-container');
+            if (container.classList.contains('d-none')) {
+                container.classList.remove('d-none');
+                btn.textContent = 'Hide';
+            } else {
+                container.classList.add('d-none');
+                btn.textContent = 'Show';
+            }
         }
 
-        });
-      });
-    });
-   </script> 
-  @*   @if (TempData["OpenModalId"] != null) *@
-  @*   { *@
-  @*       <script> *@
-  @*           document.addEventListener("DOMContentLoaded", function () { *@
-  @*               var modalId = "#editModal-" + "@TempData["OpenModalId"]"; *@
-  @*               var modal = new bootstrap.Modal(document.querySelector(modalId)); *@
-  @*               modal.show(); *@
-  @*           }); *@
-  @*       </script> *@
-  @*   } *@
+        // Image zoom logic (open in new tab)
+        function zoomImage(img) {
+            window.open(img.src, '_blank');
+        }
 
+        // Copy to clipboard
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard: ' + text);
+            });
+        }
+
+        // Enable tooltips
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+                new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]').forEach(inp => {
+                inp.min = today;
+                inp.required = true;
+            });
+
+            document.querySelectorAll('input[type="number"]').forEach(inp => {
+                inp.min = 0;
+                inp.required = true;
+            });
+
+            document.querySelectorAll('select[name="SupplierId"]').forEach(sel => {
+                sel.required = true;
+            });
+
+            const errorModalEl = document.getElementById('errorModal');
+            const errorModal = new bootstrap.Modal(errorModalEl);
+            const errorMsg = document.getElementById('errorModalMessage');
+
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', e => {
+                    if (!form.checkValidity()) {
+                        e.preventDefault();
+                        errorMsg.textContent = "Please fill all required fields and ensure dates/amounts are valid.";
+                        errorModal.show();
+                        return;
+                    }
+
+                    const invoiceDone = form.querySelector('[name="InvoiceDone"]');
+                    const fileInput = form.querySelector('[name="file"]');
+                    const existing = form.querySelector('[name="ExistingInvoicePicture"]')?.value;
+
+                    if (invoiceDone && invoiceDone.value === 'true' && !existing && (!fileInput || fileInput.files.length === 0)) {
+                        e.preventDefault();
+                        errorMsg.textContent = "Please upload an invoice image before marking the invoice as done.";
+                        errorModal.show();
+                    }
+                });
+            });
+        });
+    </script>
 }
-    

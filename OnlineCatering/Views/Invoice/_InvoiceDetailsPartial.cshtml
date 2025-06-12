@@ -1,0 +1,37 @@
+﻿@model OnlineCatering.Models.Invoice
+
+<div class="modal-header">
+    <h5 class="modal-title">Invoice #@Model.InvoiceId</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <p><strong>Customer:</strong> @Model.Booking.Customer.UserName</p>
+    <p><strong>Date:</strong> @Model.InvoiceDate.ToString("yyyy-MM-dd")</p>
+
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.InvoiceItems)
+            {
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.Quantity</td>
+                    <td>Rs @item.UnitPrice</td>
+                    <td>Rs @item.Total</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p><strong>Discount:</strong> Rs @Model.Discount</p>
+    <p><strong>Tax:</strong> Rs @Model.Tax</p>
+    <p><strong>Additional Charges:</strong> Rs @Model.AdditionalCharges</p>
+    <h5 class="text-success">Total Amount: Rs @Model.TotalAmount</h5>
+</div>

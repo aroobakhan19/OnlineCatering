@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OnlineCatering.Models;
+using OnlineCatering.Models.ViewModels;
 namespace OnlineCatering.Controllers
 {
     public class CatererController : Controller
@@ -751,8 +752,30 @@ namespace OnlineCatering.Controllers
                     .ThenInclude(bmi => bmi.MenuItemNoNavigation) // eager load menu items
                 .OrderByDescending(b => b.BookingDate)
                 .ToListAsync();
+            
+            var viewModel = bookings.Select(b => new BookingWithInvoiceViewModel
+            {
+                Booking = b,
+                InvoiceExists = db.Invoices.Any(i => i.BookingId == b.BookingId)
+            }).ToList();
 
-            return View(bookings);
+            return View(viewModel);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateBookingStatus(int bookingId, string newStatus)
+        {
+            var booking = await db.Bookings.FindAsync(bookingId);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+
+            booking.BookingStatus = newStatus;
+            await db.SaveChangesAsync();
+
+            return RedirectToAction("Bookings");
         }
 
     }

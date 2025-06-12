@@ -1,46 +1,89 @@
-﻿@model List<OnlineCatering.Models.Booking>
+﻿@* @model List<OnlineCatering.Models.Booking> *@
+@model List<OnlineCatering.Models.ViewModels.BookingWithInvoiceViewModel>
 
-<h2>Your Bookings</h2>
+@{
+    ViewData["Title"] = "Bookings";
+}
+<div class="container py-4" style="background-color: #FFFCF8;">
+    <h2 class="mb-4" style="color: #D4A762;">Your Bookings</h2>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Booking Date</th>
-            <th>Customer</th>
-            <th>Venue</th>
-            <th>Payment Mode</th>
-            <th>Status</th>
-            <th>Bill Amount</th>
-            <th>Menu Items</th>
-            <th>Messages</th> <!-- New column -->
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var booking in Model)
-        {
-            <tr>
-                <td>@booking.BookingDate.ToString("yyyy-MM-dd")</td>
-                <td>@booking.Customer.UserName</td>
-                <td>@booking.Venue</td>
-                <td>@booking.PaymentMode</td>
-                <td>@booking.BookingStatus</td>
-                <td>@(booking.BillAmount.HasValue ? "Rs" + booking.BillAmount.Value.ToString("N2") : "N/A")</td>
-                <td>
-                    <ul>
-                        @foreach (var item in booking.BookingMenuItems)
-                        {
-                            <li>@item.MenuItemNoNavigation.ItemName</li>
-                        }
-                    </ul>
-                </td>
-                <td>
-                    <!-- Link/button to open chat with this booking's customer -->
-                    <a asp-controller="Message" asp-action="Chat" asp-route-customerId="@booking.CustomerId"
-                       class="btn btn-sm btn-primary">
-                        Chat
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle text-center">
+            <thead class="table-light">
+                <tr style="color: #000;">
+                    <th>Booking Date</th>
+                    <th>Customer</th>
+                    <th>Venue</th>
+                    <th>Payment Mode</th>
+                    <th>Status</th>
+                    <th>Bill Amount</th>
+                    <th>Menu Items</th>
+                    <th>Invoice</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var booking = item.Booking;
+
+                    <tr style="color: #000;">
+                        <td>@booking.BookingDate.ToString("yyyy-MM-dd")</td>
+                        <td>@booking.Customer.UserName</td>
+                        <td>@booking.Venue</td>
+                        <td>@booking.PaymentMode</td>
+                        <td>@booking.BookingStatus</td>
+                        <td>
+                            @(
+                                booking.BillAmount.HasValue
+                                ? Html.Raw($"<span style='color: #D4A762;'>Rs {booking.BillAmount.Value:N2}</span>")
+                                : "N/A"
+                                )
+                        </td>
+                        <td>
+                            <ul class="list-unstyled" style="color: #808080; text-align: left;">
+                                @foreach (var menu in booking.BookingMenuItems)
+                                {
+                                    <li>@menu.MenuItemNoNavigation.ItemName</li>
+                                }
+                            </ul>
+                        </td>
+                        <td>
+                            @if (item.InvoiceExists)
+                            {
+                                <a asp-controller="Invoice" asp-action="Invoices"> <button class="btn btn-sm btn-secondary mt-1">Generated</button></a>
+                            }
+                            else
+                            {
+                                <a asp-controller="Invoice" asp-action="Create" asp-route-bookingId="@booking.BookingId"
+                                   class="btn btn-sm btn-outline-success mt-1">
+                                    Generate Invoice
+                                </a>
+                            }
+                        </td>
+                        <td class="text-center">
+                            <!-- Chat Button -->
+                            <a asp-controller="Message" asp-action="Chat" asp-route-customerId="@booking.CustomerId"
+                               class="btn btn-sm mb-2 text-white w-100"
+                               style="background-color: #D4A762; border: none;">
+                                💬 Chat
+                            </a>
+
+                            <!-- Change Status Form -->
+                            <form asp-controller="Caterer" asp-action="UpdateBookingStatus" method="post" class="d-grid gap-1">
+                                <input type="hidden" name="bookingId" value="@booking.BookingId" />
+                                <select name="newStatus" class="form-select form-select-sm">
+                                    <option disabled selected>Change Status</option>
+                                    <option value="Pending" selected="@(booking.BookingStatus == "Pending")">Pending</option>
+                                    <option value="Accepted" selected="@(booking.BookingStatus == "Accepted")">Accepted</option>
+                                    <option value="Completed" selected="@(booking.BookingStatus == "Completed")">Completed</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-outline-secondary w-100">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

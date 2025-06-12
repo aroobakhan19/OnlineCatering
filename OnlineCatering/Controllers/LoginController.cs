@@ -67,7 +67,7 @@ namespace OnlineCatering.Controllers
                     HttpContext.Session.SetString("UserType", "Customer");
                     Console.WriteLine("Login successful for user: " + user.UserName);
                     // Add session/auth logic later
-                    return RedirectToAction("Privacy", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -140,7 +140,7 @@ namespace OnlineCatering.Controllers
 
 
                     // Add session/auth logic later
-                    return RedirectToAction("Privacy", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
 
             }

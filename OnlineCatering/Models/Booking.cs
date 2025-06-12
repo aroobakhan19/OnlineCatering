@@ -28,4 +28,6 @@ public partial class Booking
     public virtual CatererLogin Caterer { get; set; } = null!;
 
     public virtual Login Customer { get; set; } = null!;
+
+    public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
 }

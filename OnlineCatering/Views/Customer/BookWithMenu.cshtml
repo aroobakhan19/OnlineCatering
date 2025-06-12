@@ -6,52 +6,68 @@
 
 }
 
-<h2>Book with Menu</h2>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded">
+                <div class="card-body p-5 bg-light">
+                    <h2 class="text-center mb-4 text-primary">Book with Menu</h2>
 
-<form asp-action="BookWithMenu" method="post">
-    <input type="hidden" asp-for="CatererId" />
+                    <form asp-action="BookWithMenu" method="post">
+                        <input type="hidden" asp-for="CatererId" />
 
-    <div class="mb-3">
-        <label asp-for="BookingDate" class="form-label"></label>
-        <input asp-for="BookingDate" class="form-control" type="date" min="@minDate" />
-        <span asp-validation-for="BookingDate" class="text-danger"></span>
-    </div>
+                        <!-- Booking Date -->
+                        <div class="mb-3">
+                            <label asp-for="BookingDate" class="form-label fw-bold">Booking Date</label>
+                            <input asp-for="BookingDate" class="form-control" type="date" min="@minDate" />
+                            <span asp-validation-for="BookingDate" class="text-danger small"></span>
+                        </div>
 
-    <div class="mb-3">
-        <label asp-for="Venue" class="form-label"></label>
-        <input asp-for="Venue" class="form-control" />
-        <span asp-validation-for="Venue" class="text-danger"></span>
-    </div>
+                        <!-- Venue -->
+                        <div class="mb-3">
+                            <label asp-for="Venue" class="form-label fw-bold">Venue</label>
+                            <input asp-for="Venue" class="form-control" />
+                            <span asp-validation-for="Venue" class="text-danger small"></span>
+                        </div>
 
-    <div class="mb-3">
-        <label asp-for="PaymentMode" class="form-label"></label>
-        <select asp-for="PaymentMode" class="form-select" asp-items="Model.PaymentModes">
-            <option value="">-- Select Payment Mode --</option>
-        </select>
-        <span asp-validation-for="PaymentMode" class="text-danger"></span>
-    </div>
+                        <!-- Payment Mode -->
+                        <div class="mb-4">
+                            <label asp-for="PaymentMode" class="form-label fw-bold">Payment Mode</label>
+                            <select asp-for="PaymentMode" class="form-select" asp-items="Model.PaymentModes">
+                                <option value="">-- Select Payment Mode --</option>
+                            </select>
+                            <span asp-validation-for="PaymentMode" class="text-danger small"></span>
+                        </div>
 
+                        <!-- Menu Items -->
+                        <h4 class="mb-3 text-primary">Select Menu Items</h4>
+                        <div class="mb-4 ps-3">
+                            @foreach (var item in Model.MenuItems)
+                            {
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox"
+                                           value="@item.MenuItemNo"
+                                           name="SelectedMenuItemNos"
+                                           id="menuItem_@item.MenuItemNo" />
+                                    <label class="form-check-label" for="menuItem_@item.MenuItemNo">
+                                        @item.ItemName - @(item.Price.HasValue ? item.Price.Value.ToString("C") : "N/A")
+                                    </label>
+                                </div>
+                            }
+                        </div>
 
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill">Book Now</button>
+                        </div>
+                    </form>
 
-    <h4>Select Menu Items</h4>
-    <div class="mb-3">
-        @foreach (var item in Model.MenuItems)
-        {
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox"
-                       value="@item.MenuItemNo"
-                       name="SelectedMenuItemNos"
-                       id="menuItem_@item.MenuItemNo" />
-                <label class="form-check-label" for="menuItem_@item.MenuItemNo">
-                    @item.ItemName - @(item.Price.HasValue ? item.Price.Value.ToString("C") : "N/A")
-
-                </label>
+                </div>
             </div>
-        }
+        </div>
     </div>
+</div>
 
-    <button type="submit" class="btn btn-primary">Book Now</button>
-</form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

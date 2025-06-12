@@ -1,0 +1,65 @@
+﻿@model List<OnlineCatering.Models.Invoice>
+
+<div class="container my-4">
+    <h3 class="mb-4">Your Invoices</h3>
+
+    <table class="table table-bordered text-center">
+        <thead class="table-light">
+            <tr>
+                <th>Invoice ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var invoice in Model)
+            {
+                <tr>
+                    <td>@invoice.InvoiceId</td>
+                    <td>@invoice.Booking.Customer.UserName</td>
+                    <td>@invoice.InvoiceDate.ToString("yyyy-MM-dd")</td>
+                    <td>Rs @invoice.TotalAmount</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-info"
+                                data-bs-toggle="modal"
+                                data-bs-target="#invoiceModal"
+                                data-id="@invoice.InvoiceId">
+                            View
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content" id="invoiceModalContent">
+            <div class="modal-body text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#invoiceModal').on('show.bs.modal', function (event) {
+            const button = $(event.relatedTarget);
+            const invoiceId = button.data('id');
+
+            const modalContent = $('#invoiceModalContent');
+            modalContent.html('<div class="modal-body text-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+
+            $.get(`/Invoice/DetailsPartial/${invoiceId}`, function (data) {
+                modalContent.html(data);
+            });
+        });
+    </script>
+}

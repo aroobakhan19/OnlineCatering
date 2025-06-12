@@ -1,268 +1,992 @@
 {
   "Files": [
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OnlineCatering.bundle.scp.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OnlineCatering.bundle.scp.css",
       "PackagePath": "staticwebassets\\OnlineCatering.xjh8mpk0rx.bundle.scp.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\Screenshot 2025-06-01 015310.png",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\Screenshot 2025-06-01 015310.png",
       "PackagePath": "staticwebassets\\Image\\Screenshot 2025-06-01 015310.png"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\t-shirts.webp",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\about.jpg",
+      "PackagePath": "staticwebassets\\Image\\about.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\background-site.jpg",
+      "PackagePath": "staticwebassets\\Image\\background-site.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\Image\\blog-1.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\Image\\blog-2.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\Image\\blog-3.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-1.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-1.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-2.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-2.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-3.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-3.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-4.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-4.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-5.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-5.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-6.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-6.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-7.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-7.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\event-8.jpg",
+      "PackagePath": "staticwebassets\\Image\\event-8.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\fact.jpg",
+      "PackagePath": "staticwebassets\\Image\\fact.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\hero.png",
+      "PackagePath": "staticwebassets\\Image\\hero.png"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-01.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-01.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-02.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-02.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-03.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-03.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-04.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-04.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-05.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-05.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-06.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-06.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-07.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-07.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-08.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-08.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-09.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-09.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\menu-10.jpg",
+      "PackagePath": "staticwebassets\\Image\\menu-10.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\t-shirts.webp",
       "PackagePath": "staticwebassets\\Image\\t-shirts.webp"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\t_shirt2.jpg",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\t_shirt2.jpg",
       "PackagePath": "staticwebassets\\Image\\t_shirt2.jpg"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Ali Importer (1).jpg",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\team-1.jpg",
+      "PackagePath": "staticwebassets\\Image\\team-1.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\team-2.jpg",
+      "PackagePath": "staticwebassets\\Image\\team-2.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\team-3.jpg",
+      "PackagePath": "staticwebassets\\Image\\team-3.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\team-4.jpg",
+      "PackagePath": "staticwebassets\\Image\\team-4.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\testimonial-1.jpg",
+      "PackagePath": "staticwebassets\\Image\\testimonial-1.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\testimonial-2.jpg",
+      "PackagePath": "staticwebassets\\Image\\testimonial-2.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\testimonial-3.jpg",
+      "PackagePath": "staticwebassets\\Image\\testimonial-3.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\testimonial-4.jpg",
+      "PackagePath": "staticwebassets\\Image\\testimonial-4.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\user1.jpg",
+      "PackagePath": "staticwebassets\\Image\\user1.jpg"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Ali Importer (1).jpg",
       "PackagePath": "staticwebassets\\InvoiceImages\\Ali Importer (1).jpg"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\t-shirts.webp",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\Screenshot 2025-06-01 015310.png",
+      "PackagePath": "staticwebassets\\InvoiceImages\\Screenshot 2025-06-01 015310.png"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\InvoiceImages\\t-shirts.webp",
       "PackagePath": "staticwebassets\\InvoiceImages\\t-shirts.webp"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\css\\site.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\favicon.ico",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\js\\site.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\animate\\animate.css",
+      "PackagePath": "staticwebassets\\lib\\animate\\animate.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\animate\\animate.min.css",
+      "PackagePath": "staticwebassets\\lib\\animate\\animate.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\counterup\\counterup.min.js",
+      "PackagePath": "staticwebassets\\lib\\counterup\\counterup.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\E-Project\\Project\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\lightbox\\css\\lightbox.min.css",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\css\\lightbox.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\lightbox\\images\\close.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\close.png"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\lightbox\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\loading.gif"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\lightbox\\images\\next.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\next.png"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\lightbox\\images\\prev.png",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\images\\prev.png"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\lightbox\\js\\lightbox.min.js",
+      "PackagePath": "staticwebassets\\lib\\lightbox\\js\\lightbox.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\lib\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\waypoints\\links.php",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\links.php"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\waypoints\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\wow\\wow.js",
+      "PackagePath": "staticwebassets\\lib\\wow\\wow.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\lib\\wow\\wow.min.js",
+      "PackagePath": "staticwebassets\\lib\\wow\\wow.min.js"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OnlineCatering.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

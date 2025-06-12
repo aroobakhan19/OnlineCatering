@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    
+*@
+@{
+    ViewData["Title"] = "Contact US";
+}
+<!-- Contact Start -->
+<div class="container-fluid contact py-6 wow fadeInUp" data-wow-delay="0.1s" id="contact">
+    <div class="container">
+        <div class="p-5 bg-light rounded contact-form">
+            <div class="row g-4">
+                <div class="col-12">
+                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-white border border-primary rounded-pill px-4 py-1 mb-3">Get in Touch</small>
+                    <h1 class="display-5 mb-0">We’d Love to Cater Your Event!</h1>
+                </div>
+
+                <div class="col-md-6 col-lg-7">
+                    <p class="mb-4">Have a question, event in mind, or want a custom quote? Just send us a message — we usually respond within a few hours.</p>
+                    <form asp-action="Contact" asp-controller="Home" method="post">
+                        <input type="text" name="FullName" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Your Full Name" required>
+                        <input type="email" name="Email" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Your Email Address" required>
+                        <input type="text" name="Phone" class="w-100 form-control p-3 mb-4 border-primary bg-light" placeholder="Your Phone Number" required>
+                        <textarea name="Message" class="w-100 form-control mb-4 p-3 border-primary bg-light" rows="4" placeholder="Tell us about your event..."></textarea>
+                        <button class="w-100 btn btn-primary form-control p-3 border-primary bg-primary rounded-pill" type="submit">Send Message</button>
+                    </form>
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-success mt-3">@TempData["Message"]</div>
+                    }
+
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+                    <div>
+                        <div class="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>H# 456, Block C, Food Street, Karachi, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
+                            <i class="fas fa-envelope fa-2x text-primary me-4"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p class="mb-2">onlinecatering@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex w-100 border border-primary p-4 rounded">
+                            <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
+                            <div>
+                                <h4>Call or WhatsApp</h4>
+                                <p class="mb-2">(+92) 321 4567890</p>
+                                <p class="mb-0">(+92) 300 9876543</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->

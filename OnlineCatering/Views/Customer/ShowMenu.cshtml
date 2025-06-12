@@ -1,0 +1,28 @@
+﻿@model IEnumerable<OnlineCatering.Models.Menu>
+
+@{
+    ViewData["Title"] = "ShowMenu";
+}
+
+<div class="container-fluid menu py-6">
+    <div class="container">
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="menu-item d-flex align-items-center" value="@item.MenuItemNo">
+                        <img class="flex-shrink-0 img-fluid rounded-circle" src="@Url.Content(item.Image)" alt="">
+                        <div class="w-100 d-flex flex-column text-start ps-4">
+                            <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                                <h4>@item.ItemName</h4>
+                                <h4 class="text-primary">Rs @item.Price</h4>
+                            </div>
+                            <p class="mb-0">@item.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>

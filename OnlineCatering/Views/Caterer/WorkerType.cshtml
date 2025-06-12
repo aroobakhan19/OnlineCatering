@@ -3,135 +3,142 @@
     ViewData["Title"] = "WorkerType";
 }
 
-<h1>Worker Types</h1>
+<div class="container px-3 px-md-5 my-4">
+    <!-- 🟢 Responsive & centered wrapper -->
+    <h1 class="text-center mb-4">Worker Types</h1>
 
-<!-- Create Button -->
+    <!-- Create Button + Link -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+            <i class="bi bi-plus-circle me-1"></i> Add Worker Type
+        </button>
+        <a class="btn btn-outline-secondary" asp-controller="Caterer" asp-action="Workers">
+            <i class="bi bi-person-lines-fill me-1"></i> Add Workers
+        </a>
+    </div>
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add Worker Type</button>
-    <a class="" asp-controller="Caterer" asp-action="Workers">
-        Add Workers
-    </a>
-</div>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().WorkerType1)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().PayPerDay)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.WorkerType1</td>
+                        <td>@item.PayPerDay</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning me-1" data-bs-toggle="modal" data-bs-target="#editModal-@item.WorkerTypeId">Edit</button>
+                            <button class="btn btn-sm btn-info me-1" data-bs-toggle="modal" data-bs-target="#detailModal-@item.WorkerTypeId">Details</button>
+                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@item.WorkerTypeId">Delete</button>
+                        </td>
+                    </tr>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.First().WorkerType1)</th>
-            <th>@Html.DisplayNameFor(model => model.First().PayPerDay)</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.WorkerType1</td>
-                <td>@item.PayPerDay</td>
-                <td>
-                    <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal-@item.WorkerTypeId">Edit</button>
-                    <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#detailModal-@item.WorkerTypeId">Details</button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-@item.WorkerTypeId">Delete</button>
-                </td>
-            </tr>
-
-            <!-- Edit Modal -->
-            <div class="modal fade" id="editModal-@item.WorkerTypeId" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form asp-action="editWorkerType" method="post">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Edit Worker Type</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="editModal-@item.WorkerTypeId" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form asp-action="editWorkerType" method="post">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit Worker Type</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="id" value="@item.WorkerTypeId" />
+                                        <div class="mb-3">
+                                            <label class="form-label">Type</label>
+                                            <input name="WorkerType1" class="form-control" value="@item.WorkerType1" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Pay Per Day</label>
+                                            <input name="PayPerDay" class="form-control" value="@item.PayPerDay" type="number" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="modal-body">
-                                <input type="hidden" name="id" value="@item.WorkerTypeId" />
-                                <div class="mb-3">
-                                    <label class="form-label">Type</label>
-                                    <input name="WorkerType1" class="form-control" value="@item.WorkerType1" />
+                        </div>
+                    </div>
+
+                    <!-- Details Modal -->
+                    <div class="modal fade" id="detailModal-@item.WorkerTypeId" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Worker Type Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Pay Per Day</label>
-                                    <input name="PayPerDay" class="form-control" value="@item.PayPerDay" type="number" />
+                                <div class="modal-body">
+                                    <p><strong>Type:</strong> @item.WorkerType1</p>
+                                    <p><strong>Pay Per Day:</strong> @item.PayPerDay</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Details Modal -->
-            <div class="modal fade" id="detailModal-@item.WorkerTypeId" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Worker Type Details</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p><strong>Type:</strong> @item.WorkerType1</p>
-                            <p><strong>Pay Per Day:</strong> @item.PayPerDay</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Delete Modal -->
-            <div class="modal fade" id="deleteModal-@item.WorkerTypeId" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form asp-action="deleteWorkerType" method="post">
-                            <input type="hidden" name="id" value="@item.WorkerTypeId" />
-                            <div class="modal-header">
-                                <h5 class="modal-title">Confirm Delete</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <!-- Delete Modal -->
+                    <div class="modal fade" id="deleteModal-@item.WorkerTypeId" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form asp-action="deleteWorkerType" method="post">
+                                    <input type="hidden" name="id" value="@item.WorkerTypeId" />
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Confirm Delete</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete <strong>@item.WorkerType1</strong>?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="modal-body">
-                                <p>Are you sure you want to delete <strong>@item.WorkerType1</strong>?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-danger">Yes, Delete</button>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-        }
-    </tbody>
-</table>
+                }
+            </tbody>
+        </table>
+    </div>
 
-<!-- Create Modal -->
-<div class="modal fade" id="createModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form asp-action="AddWorkersType" method="post">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Worker Type</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Type</label>
-                        <input name="WorkerType1" class="form-control" required />
+    <!-- Create Modal -->
+    <div class="modal fade" id="createModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form asp-action="AddWorkersType" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Worker Type</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Pay Per Day</label>
-                        <input name="PayPerDay" type="number" class="form-control" required />
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Type</label>
+                            <input name="WorkerType1" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Pay Per Day</label>
+                            <input name="PayPerDay" type="number" class="form-control" required />
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">  
-                    <button class="btn btn-success" type="submit">Add</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                </div>
-            </form>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" type="submit">Add</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
