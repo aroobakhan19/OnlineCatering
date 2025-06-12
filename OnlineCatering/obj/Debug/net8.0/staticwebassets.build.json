@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HwdVfbc27Dd/sVkHd7NUZiZYynVuKi/OGfJ8ibWHPi8=",
+  "Hash": "mT5GSv8I6Tb3hma0JvAvtlAYe2lpOqxQhPbEoJY6iZc=",
   "Source": "OnlineCatering",
   "BasePath": "_content/OnlineCatering",
   "Mode": "Default",
@@ -120,6 +120,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\libwkhtmltox.dll",
+      "SourceId": "OnlineCatering",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\",
+      "BasePath": "_content/OnlineCatering",
+      "RelativePath": "DinkToPdf/libwkhtmltox#[.{fingerprint}]?.dll",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bz3l4eybx5",
+      "Integrity": "Z2P8wHB+ygp/jQJJX7WNnJligr0yhXOILYu73mBmbxk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DinkToPdf\\libwkhtmltox.dll"
+    },
+    {
+      "Identity": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltopdf.exe",
+      "SourceId": "OnlineCatering",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\",
+      "BasePath": "_content/OnlineCatering",
+      "RelativePath": "DinkToPdf/wkhtmltopdf#[.{fingerprint}]?.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jhzul28502",
+      "Integrity": "2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DinkToPdf\\wkhtmltopdf.exe"
+    },
+    {
+      "Identity": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltox.dll",
+      "SourceId": "OnlineCatering",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\",
+      "BasePath": "_content/OnlineCatering",
+      "RelativePath": "DinkToPdf/wkhtmltox#[.{fingerprint}]?.dll",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w25v45g9f1",
+      "Integrity": "iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DinkToPdf\\wkhtmltox.dll"
     },
     {
       "Identity": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\favicon.ico",
@@ -5469,6 +5532,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-lpP6VFz0ajGxc1b/bsQK/cYj9XE6i2XnTxH5EtAmcgM="
+        }
+      ]
+    },
+    {
+      "Route": "DinkToPdf/libwkhtmltox.bz3l4eybx5.dll",
+      "AssetFile": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\libwkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29765120"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z2P8wHB+ygp/jQJJX7WNnJligr0yhXOILYu73mBmbxk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 23:03:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bz3l4eybx5"
+        },
+        {
+          "Name": "label",
+          "Value": "DinkToPdf/libwkhtmltox.dll"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z2P8wHB+ygp/jQJJX7WNnJligr0yhXOILYu73mBmbxk="
+        }
+      ]
+    },
+    {
+      "Route": "DinkToPdf/libwkhtmltox.dll",
+      "AssetFile": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\libwkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29765120"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z2P8wHB+ygp/jQJJX7WNnJligr0yhXOILYu73mBmbxk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 23:03:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z2P8wHB+ygp/jQJJX7WNnJligr0yhXOILYu73mBmbxk="
+        }
+      ]
+    },
+    {
+      "Route": "DinkToPdf/wkhtmltopdf.exe",
+      "AssetFile": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30235648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:03:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk="
+        }
+      ]
+    },
+    {
+      "Route": "DinkToPdf/wkhtmltopdf.jhzul28502.exe",
+      "AssetFile": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30235648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:03:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jhzul28502"
+        },
+        {
+          "Name": "label",
+          "Value": "DinkToPdf/wkhtmltopdf.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2bPSyBSW6Lulzfa832+D48S2LRVHoQhrw4xqa/GryGk="
+        }
+      ]
+    },
+    {
+      "Route": "DinkToPdf/wkhtmltox.dll",
+      "AssetFile": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30098944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s="
+        }
+      ]
+    },
+    {
+      "Route": "DinkToPdf/wkhtmltox.w25v45g9f1.dll",
+      "AssetFile": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30098944"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 10 Jun 2020 20:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w25v45g9f1"
+        },
+        {
+          "Name": "label",
+          "Value": "DinkToPdf/wkhtmltox.dll"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iNxZZXLKktPxM/H7DLlXJX1yLDrALZChCToBLvGVq/s="
         }
       ]
     },

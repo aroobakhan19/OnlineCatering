@@ -1,6 +1,9 @@
 wwwroot\css\bootstrap.min.css
 wwwroot\css\site.css
 wwwroot\css\style.css
+wwwroot\DinkToPdf\libwkhtmltox.dll
+wwwroot\DinkToPdf\wkhtmltopdf.exe
+wwwroot\DinkToPdf\wkhtmltox.dll
 wwwroot\favicon.ico
 wwwroot\Image\about.jpg
 wwwroot\Image\background-site.jpg

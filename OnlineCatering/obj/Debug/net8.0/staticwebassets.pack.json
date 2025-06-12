@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\OnlineCatering.xjh8mpk0rx.bundle.scp.css"
     },
     {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\libwkhtmltox.dll",
+      "PackagePath": "staticwebassets\\DinkToPdf\\libwkhtmltox.dll"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\DinkToPdf\\wkhtmltopdf.exe"
+    },
+    {
+      "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\DinkToPdf\\wkhtmltox.dll",
+      "PackagePath": "staticwebassets\\DinkToPdf\\wkhtmltox.dll"
+    },
+    {
       "Id": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\wwwroot\\Image\\Screenshot 2025-06-01 015310.png",
       "PackagePath": "staticwebassets\\Image\\Screenshot 2025-06-01 015310.png"
     },

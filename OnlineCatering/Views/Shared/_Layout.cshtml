@@ -97,32 +97,32 @@
 
                             <!-- Menu Dropdown -->
                             <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Menu
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="menuDropdown">
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="listMenu">Menu</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="Menu_Categories">Menu Categories</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Resources Dropdown -->
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-dark @(currentController == "Caterer" &&
+        (currentAction == "Workers" || currentAction == "WorkerType" || currentAction == "Suppliers"
+        || currentAction == "ListSupplierOrder" || currentAction == "RawMaterials"
+        || currentAction == "Menu" || currentAction == "MenuCategory") ? "active" : "")"
+                                   href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Resources
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="Workers">Workers</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="WorkerType">Worker Types</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="Suppliers">Suppliers</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="ListSupplierOrder">Supplier Orders</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Caterer" asp-action="RawMaterials">Raw Materials</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "Workers" ? "active" : "")" asp-controller="Caterer" asp-action="Workers">Workers</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "WorkerType" ? "active" : "")" asp-controller="Caterer" asp-action="WorkerType">Worker Types</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "Suppliers" ? "active" : "")" asp-controller="Caterer" asp-action="Suppliers">Suppliers</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "ListSupplierOrder" ? "active" : "")" asp-controller="Caterer" asp-action="ListSupplierOrder">Supplier Orders</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "RawMaterials" ? "active" : "")" asp-controller="Caterer" asp-action="RawMaterials">Raw Materials</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "Menu_Categories" ? "active" : "")" asp-controller="Caterer" asp-action="Menu_Categories">Menu Categories</a></li>
+                                    <li><a class="dropdown-item @(currentAction == "listMenu" ? "active" : "")" asp-controller="Caterer" asp-action="listMenu">Menu Items</a></li>
                                 </ul>
                             </div>
 
+
                             <!-- Others -->
-                            <a class="nav-item nav-link text-dark" asp-controller="Message" asp-action="Chat">Chats</a>
-                            <a class="nav-item nav-link text-dark" asp-controller="Caterer" asp-action="Bookings">Bookings</a>
+                            <a class="nav-item nav-link text-dark @(currentController == "Message" && currentAction == "Chat" ? "active" : "")" asp-controller="Message" asp-action="Chat">Chats</a>
+
+                            <a class="nav-item nav-link text-dark @(currentController == "Caterer" && currentAction == "Bookings" ? "active" : "")" asp-controller="Caterer" asp-action="Bookings">Bookings</a>
+
+                            <a class="nav-item nav-link text-dark @(currentController == "Invoice" && currentAction == "Invoices" ? "active" : "")" asp-controller="Invoice" asp-action="Invoices">Invoices</a>
+
                         </div>
 
 

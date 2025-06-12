@@ -35,3 +35,10 @@
     <p><strong>Additional Charges:</strong> Rs @Model.AdditionalCharges</p>
     <h5 class="text-success">Total Amount: Rs @Model.TotalAmount</h5>
 </div>
+<div class="modal-footer">
+    <a class="btn btn-success" asp-action="DownloadInvoicePdf" asp-route-invoiceId="@Model.InvoiceId">Download PDF</a>
+
+
+</div>
+
+
