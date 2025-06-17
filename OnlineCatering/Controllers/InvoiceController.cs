@@ -1,5 +1,4 @@
-﻿using DinkToPdf;
-using DinkToPdf.Contracts;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
@@ -12,12 +11,10 @@ namespace OnlineCatering.Controllers
     public class InvoiceController : Controller
     {
         private readonly OnlineCateringContext db;
-        private readonly IConverter _converter;
 
-        public InvoiceController(OnlineCateringContext context, IConverter converter)
+        public InvoiceController(OnlineCateringContext context)
         {
             db = context;
-            _converter = converter;
         }
 
         [HttpGet]
@@ -83,60 +80,6 @@ namespace OnlineCatering.Controllers
             return PartialView("_InvoiceDetailsPartial", invoice);
         }
 
-        public IActionResult DownloadInvoicePdf(int invoiceId)
-        {
-            var invoice = db.Invoices
-                .Include(i => i.InvoiceItems)
-                .Include(i => i.Booking)
-                    .ThenInclude(b => b.Customer)
-                .FirstOrDefault(i => i.InvoiceId == invoiceId);
-
-            if (invoice == null) return NotFound();
-
-            var htmlContent = RenderViewAsString("_InvoiceDetailsPartial", invoice);
-
-            var pdf = new HtmlToPdfDocument()
-            {
-                GlobalSettings = {
-                    PaperSize = PaperKind.A4,
-                    Orientation = Orientation.Portrait,
-                    DocumentTitle = $"Invoice_{invoiceId}"
-                },
-                Objects = {
-                    new ObjectSettings() {
-                        HtmlContent = htmlContent
-                    }
-                }
-            };
-
-            var pdfBytes = _converter.Convert(pdf);
-            return File(pdfBytes, "application/pdf", $"Invoice_{invoiceId}.pdf");
-        }
-
-        private string RenderViewAsString(string viewName, object model)
-        {
-            var viewEngine = HttpContext.RequestServices.GetService<ICompositeViewEngine>();
-            var viewResult = viewEngine.FindView(ControllerContext, viewName, false);
-
-            if (!viewResult.Success)
-                throw new InvalidOperationException($"Couldn't find view: {viewName}");
-
-            ViewData.Model = model;
-
-            using (var sw = new StringWriter())
-            {
-                var viewContext = new ViewContext(
-                    ControllerContext,
-                    viewResult.View,
-                    ViewData,
-                    TempData,
-                    sw,
-                    new HtmlHelperOptions()
-                );
-
-                viewResult.View.RenderAsync(viewContext).Wait();
-                return sw.ToString();
-            }
-        }
+       
     }
 }

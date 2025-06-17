@@ -1,12 +1,10 @@
 wwwroot\css\bootstrap.min.css
 wwwroot\css\site.css
 wwwroot\css\style.css
-wwwroot\DinkToPdf\libwkhtmltox.dll
-wwwroot\DinkToPdf\wkhtmltopdf.exe
-wwwroot\DinkToPdf\wkhtmltox.dll
 wwwroot\favicon.ico
 wwwroot\Image\about.jpg
 wwwroot\Image\background-site.jpg
+wwwroot\Image\biryani.jpg
 wwwroot\Image\blog-1.jpg
 wwwroot\Image\blog-2.jpg
 wwwroot\Image\blog-3.jpg
@@ -30,6 +28,7 @@ wwwroot\Image\menu-07.jpg
 wwwroot\Image\menu-08.jpg
 wwwroot\Image\menu-09.jpg
 wwwroot\Image\menu-10.jpg
+wwwroot\Image\pizza.jpeg
 wwwroot\Image\Screenshot 2025-06-01 015310.png
 wwwroot\Image\t_shirt2.jpg
 wwwroot\Image\team-1.jpg
@@ -43,6 +42,7 @@ wwwroot\Image\testimonial-4.jpg
 wwwroot\Image\t-shirts.webp
 wwwroot\Image\user1.jpg
 wwwroot\InvoiceImages\Ali Importer (1).jpg
+wwwroot\InvoiceImages\pizza.jpeg
 wwwroot\InvoiceImages\Screenshot 2025-06-01 015310.png
 wwwroot\InvoiceImages\t-shirts.webp
 wwwroot\js\main.js

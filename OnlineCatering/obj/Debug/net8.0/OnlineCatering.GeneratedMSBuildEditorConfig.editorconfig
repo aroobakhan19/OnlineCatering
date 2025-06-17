@@ -17,145 +17,145 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OnlineCatering
 build_property.RootNamespace = OnlineCatering
-build_property.ProjectDir = D:\E-Project\Templates\OnlineCatering\OnlineCatering\
+build_property.ProjectDir = D:\TEMPLATES\OnlineCatering\OnlineCatering\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\E-Project\Templates\OnlineCatering\OnlineCatering
+build_property.MSBuildProjectDirectory = D:\TEMPLATES\OnlineCatering\OnlineCatering
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/Bookings.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/Bookings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxCb29raW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/listMenu.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/listMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxsaXN0TWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/ListSupplierOrder.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/ListSupplierOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxMaXN0U3VwcGxpZXJPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/Menu_Categories.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/Menu_Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxNZW51X0NhdGVnb3JpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/RawMaterials.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/RawMaterials.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxSYXdNYXRlcmlhbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/Suppliers.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/Suppliers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxTdXBwbGllcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/Workers.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/Workers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxXb3JrZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Caterer/WorkerType.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Caterer/WorkerType.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZXJlclxXb3JrZXJUeXBlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Customer/BookWithMenu.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Customer/BookWithMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQm9va1dpdGhNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Customer/Caterers.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Customer/Caterers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2F0ZXJlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Customer/FavouriteCaterers.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Customer/FavouriteCaterers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRmF2b3VyaXRlQ2F0ZXJlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Customer/MenuByCaterer.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Customer/MenuByCaterer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTWVudUJ5Q2F0ZXJlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Customer/Profile.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Customer/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Customer/ShowMenu.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Customer/ShowMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcU2hvd01lbnUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Home/About.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Home/Contact.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Home/Index.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Home/Privacy.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Home/Service.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Home/Service.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Invoice/Create.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Invoice/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Invoice/Invoices.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Invoice/Invoices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZVxJbnZvaWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Invoice/_InvoiceDetailsPartial.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Invoice/_InvoiceDetailsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZVxfSW52b2ljZURldGFpbHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Login/CatererLogin.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Login/CatererLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2F0ZXJlckxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Login/CatererReg.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Login/CatererReg.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2F0ZXJlclJlZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Login/Login.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Login/Signup.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Login/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbnVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Message/Chat.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Message/Chat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxDaGF0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Message/ChatCustomer.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Message/ChatCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxDaGF0Q3VzdG9tZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Shared/Error.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/_ViewImports.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/_ViewStart.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/E-Project/Templates/OnlineCatering/OnlineCatering/Views/Shared/_Layout.cshtml]
+[D:/TEMPLATES/OnlineCatering/OnlineCatering/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-04vs2q2zs6

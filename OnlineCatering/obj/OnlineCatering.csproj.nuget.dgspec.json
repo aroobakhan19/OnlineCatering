@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj": {}
+    "D:\\TEMPLATES\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj": {}
   },
   "projects": {
-    "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj": {
+    "D:\\TEMPLATES\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj",
+        "projectUniqueName": "D:\\TEMPLATES\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj",
         "projectName": "OnlineCatering",
-        "projectPath": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj",
+        "projectPath": "D:\\TEMPLATES\\OnlineCatering\\OnlineCatering\\OnlineCatering.csproj",
         "packagesPath": "C:\\Users\\syedh\\.nuget\\packages\\",
-        "outputPath": "D:\\E-Project\\Templates\\OnlineCatering\\OnlineCatering\\obj\\",
+        "outputPath": "D:\\TEMPLATES\\OnlineCatering\\OnlineCatering\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
